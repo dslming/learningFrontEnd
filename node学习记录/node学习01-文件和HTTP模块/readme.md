@@ -62,7 +62,7 @@ server.listen("3000","127.0.0.1");
 
 为了方便处理，将所有静态文件都放在一个文件夹中，直接根据url去文件夹中拿取，然后响应浏览器。目录结构如下：
 
-![public](G:\chuanzhiboke\前端课程(6)--node\01-核心模块\笔记\img\public.png)
+![public](.\img\public.png)
 
 
 1)html中：
