@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: palegreen;
+}
+
+.view {
+  margin: 10px auto;
+  max-width: 550px;
+}
+
+.menu .section {
+  display: flex;
+  height: 90px;
+  margin-bottom: 5px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.menu .section .m_left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-right: 1px solid #fff;
+}
+
+.menu .section .m_left > .ml_2 {
+  background-image: url("../images/xc_sprites.png");
+  background-size: 104px 328px;
+  background-position: 0 -130px;
+  width: 43px;
+  height: 43px;
+}
+
+.menu .section .m_right {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu .section .m_right > a {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu .section .m_right > a:nth-child(-n+2) {
+  border-bottom: 1px solid #fff;
+}
+
+.menu .section .m_right > a:nth-child(odd) {
+  border-right: 1px solid #fff;
+}
+
+.menu .hotel {
+  background-color: #ff697a;
+}
+
+.menu .ticket {
+  background-color: #3d98ff;
+}
+
+.menu .travel {
+  background-color: #44c522;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* 解决点击高亮*/
+  -webkit-tap-highlight-color: transparent;
+}
+input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+.clearfix:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+}
+html,
+body,
+.sort_view,
+.container,
+.right {
+  height: 100%;
+}
+.sort_view {
+  padding-top: 45px;
+  position: relative;
+}
+header {
+  height: 45px;
+  width: 100%;
+  padding: 7px 50px;
+  border-bottom: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+}
+header a {
+  position: absolute;
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px 200px;
+  padding: 10px;
+  /* 增大响应区域 */
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: -22px 0;
+  width: 40px;
+  height: 40px;
+  top: 0;
+}
+header .back {
+  left: 0;
+}
+header .menu {
+  background-position: -61px 0;
+  right: 0;
+}
+header .search {
+  height: 30px;
+  width: 100%;
+}
+header .search input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-indent: 10px;
+}
+.container {
+  padding-left: 80px;
+  position: relative;
+}
+.container .left {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+}
+.container .left ul li {
+  height: 40px;
+  width: 80px;
+  text-align: center;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  line-height: 40px;
+}
+.container .left ul .active {
+  color: red;
+  border-right: none;
+}
+.container .right {
+  overflow: hidden;
+}
+.container .right ul li {
+  float: left;
+  width: 33.33333333%;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .box{
+            width: 300px;
+            height: 400px;
+            margin:200px auto;
+            position: relative;
+        }
+
+        img{
+            width: 100%;
+            position: absolute;
+            top:0px;
+            left:0px;
+            transform-origin: left top;
+            transition: transform 1s;
+        }
+
+        .box:hover>img:nth-child(1){
+            transform: rotate(60deg);
+        }
+        .box:hover>img:nth-child(2){
+            transform: rotate(120deg);
+        }
+        .box:hover>img:nth-child(3){
+            transform: rotate(180deg);
+        }
+        .box:hover>img:nth-child(4){
+            transform: rotate(240deg);
+        }
+        .box:hover>img:nth-child(5){
+            transform: rotate(300deg);
+        }
+        .box:hover>img:nth-child(6){
+            transform: rotate(360deg);
+        }
+    </style>
+    <div class="box">
+            <img src="./img/pk1.png" alt="">
+            <img src="./img/pk1.png" alt="">
+            <img src="./img/pk1.png" alt="">
+            <img src="./img/pk1.png" alt="">
+            <img src="./img/pk1.png" alt="">
+            <img src="./img/pk1.png" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+            * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+        body{
+            background-color: green;
+        }
+
+        .box{
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        img{
+            transition: transform 1s;
+        }
+    </style>
+     <button id="breatBtn">打散</button>
+     <button id="combinBtn">合并</button>
+    <div class="box">
+       
+        <img src="./img/shield_1_01.png" alt="">
+        <img src="./img/shield_1_02.png" alt="">
+        <img src="./img/shield_1_03.png" alt="">
+        <img src="./img/shield_1_04.png" alt="">
+        <img src="./img/shield_1_05.png" alt="">
+        <img src="./img/shield_1_06.png" alt="">
+        <img src="./img/shield_1_07.png" alt="">
+        <img src="./img/shield_1_08.png" alt="">
+        <img src="./img/shield_1_09.png" alt="">
+    </div>
+
+    <script>
+        var breatBtn=document.querySelector('#breatBtn');
+        var combinBtn=document.querySelector('#combinBtn');
+        var imgs = document.querySelectorAll('img');
+
+        breatBtn.onclick = function(){
+            console.log("xixi");
+            for(var i = 0;i<imgs.length;i++){
+                var img = imgs[i];
+
+                var x = Math.random()*600-300;
+                var y = Math.random()*200-100;
+                var r = Math.random()*360;
+
+                img.style.transform = "translate("+x+"px,"+y+"px) rotate("+r+"deg)";
+            }
+        }
+
+         combinBtn.onclick = function(){
+            for(var i = 0;i<imgs.length;i++){
+                var img = imgs[i];
+                img.style.transform="none";
+
+            }
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0 auto;
+            box-sizing: border-box;
+        }
+
+        ul {
+            margin: 50px auto;
+            width: 500px;
+            list-style: none;
+        }
+        li{
+            border-bottom:1px solid #000;
+        }
+
+
+        li:hover .content{
+            height: 100px;
+        }
+        .title {
+            background-color: green;
+        }
+
+        .content {
+            height: 0px;
+            overflow: hidden;
+            background-color: red;
+            transition: height 1s;
+        }
+    </style>
+    <div class="box">
+        <ul>
+            <li>
+                <div class="title">手拉面</div>
+                <div class="content">100块钱</div>
+            </li>
+            <li>
+                <div class="title">手拉面</div>
+                <div class="content">100块钱</div>
+            </li>
+            <li>
+                <div class="title">手拉面</div>
+                <div class="content">100块钱</div>
+            </li>
+            <li>
+                <div class="title">手拉面</div>
+                <div class="content">100块钱</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

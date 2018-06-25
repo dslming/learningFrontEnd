@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .test{
+            width: 200px;
+            height: 200px;
+            /* background-image: linear-gradient(black,red); */
+            /* 0~0：黑色->黑色；0~100：黑色->红色 */
+            /* background-image: linear-gradient(black 0%,red 100%);  */
+            
+            /* 0~0:黑色->黑色; 0~50:黑色->红色;50~100：红色->红色 */
+            /* background-image: linear-gradient(black 0%,red 50%); */
+
+            /*0~0:黑色->黑色；0~50：黑色->红色; 50~80:红色->黄色；80~100：黄色->黄色*/
+            /* background-image: linear-gradient(black 0%,red 50%,yellow 80%);  */
+
+            /* 0~30: 黑色->黑色；30~30：黑色->红色；30~50：红色->蓝色；50~50：蓝色->黄色;50~100:黄色->黄色*/
+            /* background-image: linear-gradient(black 30%,red 30%,blue 50%,yellow 50%); */
+
+        }
+    </style>
+    <div class="test">
+    </div>
+
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0 auto;
+            box-sizing: border-box;
+            
+        }
+
+        .android{
+            width: 500px;
+            /* border:1px solid #000; */
+        }
+
+        .header{
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            border-radius:100px 100px 0 0;
+            position: relative;
+            background-image: linear-gradient(rgb(18, 236, 18),rgb(41, 187, 41));
+        }
+        .eyes_r,
+        .eyes_l{
+            width: 20px;
+            height: 20px;
+            border-radius:50%;
+            background-color:#fff;
+            position: absolute;
+            top:50px;
+            
+        }
+        .eyes_r{
+            right:35px;
+        }
+        .eyes_l{
+            left:35px;
+        }
+
+        .ad_body{
+            margin-top:10px;
+            width: 200px;
+            height: 210px;
+            background-color: rgb(41, 187, 41);
+            position: relative;
+            border-radius: 0 0 15px 15px;
+            background-image: linear-gradient(rgb(18, 236, 18),rgb(41, 187, 41));
+        }
+        .arm_r,
+        .arm_l{
+            width: 40px;
+            height: 150px;
+            background-color: yellow;
+            position: absolute;
+            top:20px;
+            border-radius: 0 0 20px 20px;
+            background-image: linear-gradient(rgb(18, 236, 18),rgb(41, 187, 41));
+        }
+        .arm_r{
+            right: -50px;
+        }
+        .arm_l{
+            left: -50px;
+        }
+        .footer_r,
+        .footer_l{
+            width: 40px;
+            height: 90px;
+            background-color: pink;
+            position: absolute;
+            top:210px;
+            border-radius: 0 0 20px 20px;
+            background-image: linear-gradient(rgb(18, 236, 18),rgb(41, 187, 41));
+        }
+        .footer_r{
+            right: 20px;
+        }
+
+        .footer_l{
+            left: 20px;
+        }
+    </style>
+    <div class="android">
+        <div class="header">
+            <div class="eyes_r"></div>
+            <div class="eyes_l"></div>
+        </div>
+
+        <div class="ad_body">
+            <div class="arm_r"></div>
+            <div class="arm_l"></div>
+
+            <div class="footer_r"></div>
+            <div class="footer_l"></div>
+        </div>
+    </div>
+</body>
+</html>

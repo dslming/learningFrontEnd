@@ -1,0 +1,80 @@
+@import "base.less";
+html,body,.sort_view,.container,.right{
+    height: 100%;
+}
+.sort_view {
+    padding-top: 45px;
+    position: relative;
+}
+
+header {
+    height: 45px;
+    width: 100%;
+    padding: 7px 50px;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    a {
+        position: absolute;
+        background-image: url("../images/jd-sprites.png");
+        background-size: 200px 200px;
+        padding: 10px;
+        /* 增大响应区域 */
+        background-origin: content-box;
+        background-clip: content-box;
+        background-position: -22px 0;
+        width: 40px;
+        height: 40px;
+        top: 0;
+    } 
+    .back {
+        left: 0;
+    }
+    .menu {
+        background-position: -61px 0;
+        right: 0;
+    }
+    .search {
+        height: 30px;
+        width: 100%;
+        input {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-indent: 10px;
+        }
+    }
+}
+
+.container {
+    padding-left: 80px;
+    position: relative;
+    .left {
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        height: 100%;
+        ul {
+            li {
+                height: 40px;
+                width: 80px;
+                text-align: center;
+                border-right: 1px solid #000;
+                border-bottom: 1px solid #000;
+                line-height: 40px;
+            }
+            .active {
+                color: red;
+                border-right: none;
+            }
+        }
+    }
+    .right {
+        overflow: hidden;
+        ul {
+            li {
+                float: left;
+                width: 100%/3;
+            }
+        }
+    }
+}

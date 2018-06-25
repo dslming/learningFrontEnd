@@ -1,0 +1,295 @@
+# 一、box-sizing(内减盒子布局)
+## 1.1 为什么有？
+传统盒子模型布局的缺陷，为一个div设置width后，如果再改变padding那么div的整体盒子就会被改变。影响布局。
+
+## 1.2 解决方法
+如果为一个div设置了box-sizing属性，那么width就指定了div的整体宽度，后面改变padding时，会通过改变内容的宽度使其整体宽度保持不变。
+
+该属性也称为内建模式。
+
+## 1.3 身份
+属于`属性`->`用户界面`->`box-sizing`。
+
+## 1.4 使用示例
+
+```css
+    div { 
+      width: 10px;
+      border-left: 1px solid #000;
+      padding-left: 1px;
+      box-sizing: border-box;/* 内减模式 */
+    }
+```
+
+## 1.5 参数说明
+
+- content-box:width=内容宽度，属性传统盒子布局
+- border-box：width=盒子整体宽度
+
+## 1.6 应用场景
+
+ 一般用在 初始化 ：
+
+```css
+ *{
+
+        margin:0;
+
+        padding:0;
+
+        box-sizing:border-box; 
+
+      }
+
+```
+
+# 二、边框圆角
+
+```css
+边框圆角  
+border-radius:10px;
+//从左上角画一个半径为10ps的圆进行剪裁。
+```
+
+# 三、linear-gradient(图像现象渐变)
+
+## 3.1 身份
+
+`取值与单位`->`图像`->`linear-gradient`
+
+## 3.2 功能
+
+用线性渐变创建图像。仅用来设置背景图片。
+
+## 3.3 语法
+
+`background-image: linear-gradient(方向？，颜色 颜色开始的位置，颜色 颜色结束的位置，，，);`
+
+```css
+  div {
+    width: 600px;
+    height: 600px;
+    background-image: linear-gradient(black,red);
+  }
+```
+
+**方向：**
+
+- 系统内置方向  `to top|to bottm|to left|to right|to right top ` 默认值是 `to bottom` 
+- 自定义方向 `0deg或者1deg`等
+
+```css
+  div {
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient( to right top, black,red);
+  }
+```
+
+**颜色 开始的位置 ,颜色 结束的位置：**
+
+- 颜色  `red或者#000或者rgba`等
+- 开始位置（省略了 默认就是0） 单位是 `px或者百分比（相对于自身的宽或者高）`   
+
+
+- 结束的位置（省略了 默认就是百分100%）
+## 3.4 使用示例
+
+```css
+ /* background-image: linear-gradient(black,red); */
+/* 0~0：黑色->黑色；0~100：黑色->红色 */
+/* background-image: linear-gradient(black 0%,red 100%);  */
+
+/* 0~0:黑色->黑色; 0~50:黑色->红色;50~100：红色->红色 */
+/* background-image: linear-gradient(black 0%,red 50%); */
+
+/*0~0:黑色->黑色；0~50：黑色->红色; 50~80:红色->黄色；80~100：黄色->黄色*/
+/* background-image: linear-gradient(black 0%,red 50%,yellow 80%);  */
+
+/* 0~30: 黑色->黑色；30~30：黑色->红色；30~50：红色->蓝色；50~50：蓝色->黄色;50~100:黄色->黄色*/
+/* background-image: linear-gradient(black 30%,red 30%,blue 50%,yellow 50%); */
+```
+
+# 四、transition(过渡)
+
+## 4.1 身份
+
+`属性`->`过渡(transition)`
+
+## 4.2 功能
+
+将元素的连续属性值得变化放慢。过渡就好像是jquery中的animate方法一样，可以看到元素的变化的整个过程
+
+## 4.3 语法
+
+完整的参数设置如下
+
+| 属性                       | 描述                                         |
+| -------------------------- | -------------------------------------------- |
+| transition                 | 简写属性，用于在一个属性中设置四个过渡属性。 |
+| transition-property        | 规定应用过渡的 CSS 属性的名称。              |
+| transition-duration        | 定义过渡效果花费的时间。默认是 0。           |
+| transition-timing-function | 规定过渡效果的时间曲线。默认是 "ease"。      |
+| transition-delay           | 规定过渡效果何时开始。默认是 0。             |
+
+1. **要过渡的属性**  
+
+   > 如width，height  `transition-property: width;`   写`all`代表全部
+
+2. **持续时间** 
+
+   > 设置过渡的持续时间  如 `transition-duration:10s`
+
+3. **速度曲线**
+
+   设置变化的速度曲线 如匀速等  
+
+   - linear： 匀速
+   - ease： 慢-快-慢  默认值
+   - ease-in： 慢-快。
+   - ease-out： 快-慢。
+   - ease-in-out： 慢-快-慢。
+
+4. **延迟时间**
+
+   设置产生过渡时的延迟时间 如   `transition-delay: 10s;`
+
+## 4.4 使用示例
+鼠标经过盒子宽度从100px变为500px。
+
+### 4.4.1 设置元素初始样式
+在设置初始值时，添加过度属性，指定要监听的属性和速度
+```css
+.box{
+    width:100px;
+    transition:width 1s;//添加过度属性，指定要监听的属性和速度
+}
+```
+### 4.4.2 设置元素的目标样式
+
+```css
+.box:hover{
+    width:500px;
+}
+```
+
+## 4.5 补充说明
+
+1)复合写法
+
+```css
+transition: all 3s linear 2s;
+```
+
+2)不同属性的不同过渡
+
+```css
+  transition: 
+        width 1s ease-in 1s,
+        height 10s ease-in-out 2s;
+```
+
+# 五、2D transform(变换)
+
+包含translate移动和rotate旋转。
+
+## 5.1 身份
+
+`属性`->`变换(transform)`
+
+## 5.2 translate(移动)
+
+###  5.2.1 功能
+
+指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0 。
+
+### 5.2.2  使用示例
+
+以自己的左上角为参考起始。
+
+```css
+  div{
+    transform: translate(50px,50px);
+  }
+```
+
+### 5.2.3 应用场景
+
+该方法也可以简称为，移动。用于元素的布局。布局特点：
+
+- 不占位置，脱离标准流。类似绝对定位。
+- 元素的小范围移动考虑使用移动。盒子大布局仍然用定位。
+
+## 5.3 rotate(旋转)
+
+### 5.3.1 功能
+
+2d旋转指的是让元素在2维平面内顺时针旋转或者逆时针旋转
+
+使用步骤：
+
+1. 给元素添加转换属性 `transform`
+
+2. 属性值为 `rotate(角度)`  如 `transform:rotate(30deg)`  顺时针方向旋转**30度**
+
+3. 设置旋转中心 transform-origin
+
+   该属性可以修改元素旋转的时候的中心点
+
+   1) transform-origin:**50% 50%;**  默认值  元素的中心位置 百分比是相对于自身的宽度和高度
+
+   2) transform-origin:**top left;**  左上角   和 transform-origin：0 0;相同
+
+   3) transform-origin:**50px 50px;**  距离左上角 50px 50px 的位置
+
+   4) transform-origin：**0**;  只写一个值的时候  第二个值默认为 50%;
+
+### 5.3.2 使用示例
+
+```css
+div{
+     transform: rotate(0deg);//角度单位deg
+     transform-origin:50% 50%;
+}
+```
+
+## 5.4 scale(缩放)
+
+### 5.4.1 功能
+
+缩放，顾名思义，可以放大和缩小。 只要给元素添加上了这个属性就能控制它放大还是缩小 
+
+步骤：
+
+1. 给元素添加转换属性 `transform`
+2. 转换的属性值为 `scale(宽的倍数,高的倍数)`    如 宽变为两倍，高变为3倍 `transform:scale(2,3)`
+
+### 5.4.2 使用示例
+
+```css
+div{
+    transform:scale(2,3);
+}
+```
+
+
+
+# 六、今日案例
+
+## 6.1 安卓机器人
+
+![android](G:\chuanzhiboke\前端课程(5)--移动端开发\day01-css301\总结\media\android.png)
+
+## 6.2 手风琴菜单
+
+见src文件夹
+
+## 6.3 扑克旋转
+
+见src文件夹
+
+## 6.4 盾牌效果
+
+见src文件夹
+
+<全文结束>

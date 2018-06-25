@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- 
+    思路：
+        1，创建大布局
+        2,5个ul,每个ul中包含4个li
+        3,组成一张图片
+        4,设置立方体
+ -->
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        .box>a {
+            width: 120px;
+            height: 40px;
+            position: absolute;
+            background-color: orange;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            border-radius: 10px;
+            top: 100%;
+        }
+
+        #nextBtn {
+            right: 0px;
+        }
+
+        #preBtn {
+            left: 0px;
+        }
+
+        .slides {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul {
+            width: 20%;
+            height: 100%;
+            list-style: none;
+            float: left;
+            position: relative;
+            transform-style: preserve-3d;
+            /* transform: rotate3d(1, 0, 0, 0deg) */
+        }
+
+        ul>li {
+            width: 100%;
+            height: 100%;
+            background-size: 600px 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* 所有的ul标签的第一个li标签 前 */
+
+        ul>li:nth-child(1) {
+            /* background-color: red; */
+            background-image: url("./images/01.jpg");
+            transform: translateZ(200px);
+        }
+
+        /*后*/
+
+        ul>li:nth-child(2) {
+            background-image: url("./images/02.jpg");
+            transform: translateZ(-200px) rotateX(180deg);
+        }
+
+        /*上*/
+
+        ul>li:nth-child(3) {
+            background-image: url("./images/03.jpg");
+            transform: translateY(-200px) rotateX(90deg);
+        }
+
+        /*下*/
+
+        ul>li:nth-child(4) {
+            background-image: url("./images/04.jpg");
+            transform: translateY(200px) rotateX(-90deg);
+        }
+
+
+        /* 选择到第二个ul标签的所有的li标签 */
+
+        ul:nth-child(2)>li {
+            background-position: -120px 0;
+        }
+
+        ul:nth-child(3)>li {
+            background-position: -240px 0;
+        }
+
+        ul:nth-child(4)>li {
+            background-position: -360px 0;
+        }
+
+        ul:nth-child(5)>li {
+            background-position: -480px 0;
+        }
+    </style>
+
+    <div class="box">
+        <div class="slides">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <a id="preBtn" href="javascript:;">上一个</a>
+        <a id="nextBtn" href="javascript:;">下一个</a>
+    </div>
+
+    <script>
+        var preBtn = document.querySelector("#preBtn");
+        var nextBtn = document.querySelector("#nextBtn");
+        var uls = document.querySelectorAll("ul");
+        var xDeg = 0;
+        preBtn.onclick = function () {
+            xDeg += 90;
+            for (var i = 0; i < uls.length; i++) {
+               
+                var ul = uls[i];
+                // ul.style.transition = "transform 0.3 linear" + (i * 0.1) + "s";
+                // ul.style.transform = "rotateX(" + xDeg + "deg)";
+                ul.style.transition="transform .3s linear "+(i*0.1)+"s";
+                ul.style.transform="rotateX("+xDeg+"deg)";
+            }
+
+        }
+
+        nextBtn.onclick = function () {
+            xDeg -= 90;
+            for (var i = 0; i < uls.length; i++) {
+               
+                var ul = uls[i];
+                // ul.style.transition = "transform 0.3 linear" + (i * 0.1) + "s";
+                // ul.style.transform = "rotateX(" + xDeg + "deg)";
+                ul.style.transition="transform .3s linear "+(i*0.1)+"s";
+                ul.style.transform="rotateX("+xDeg+"deg)";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

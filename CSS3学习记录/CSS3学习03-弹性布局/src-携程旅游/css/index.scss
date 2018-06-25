@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  // 继承父元素的字体颜色
+  color: inherit;
+}
+img{
+  width: 100%;
+}
+body{
+  background-color: palegreen;
+}
+.view{
+  margin: 10px auto;
+  max-width: 550px;
+}
+
+
+.menu{
+  .section{
+    display: flex;
+    height: 90px;
+    margin-bottom: 5px;
+    color: #fff;
+    border-radius: 5px;
+    .m_left{
+      flex: 1;
+      display: flex; 
+      // 改变主轴的方向
+      flex-direction: column;
+      // 侧轴子项居中
+      align-items: center;
+      // 设置主轴的子项排列方式
+      justify-content: space-around;
+      // flex-wrap: wrap;
+
+      border-right: 1px solid #fff;
+      >.ml_1{
+        // width: 100%;
+      }
+      >.ml_2{
+        background-image: url("../images/xc_sprites.png");
+        background-size: 104px 328px;
+        background-position: 0 -130px;
+        width: 43px;
+        height: 43px;
+      }
+    }
+    .m_right{
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      >a{
+        // 父元素的一半
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      >a:nth-child(-n+2){
+        border-bottom: 1px solid #fff;
+      }
+      >a:nth-child(odd){
+        border-right: 1px solid #fff;
+      }
+    }
+  }
+
+
+  .hotel{
+    background-color: #ff697a;
+  }
+  .ticket{
+    background-color: #3d98ff;
+  }
+  .travel{
+    background-color: #44c522;
+  }
+}
