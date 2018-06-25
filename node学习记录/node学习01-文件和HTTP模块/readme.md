@@ -85,7 +85,7 @@ if(url.indexOf("/public") !=-1){
  }
 ```
 
-app.js 与 public同一目录。
+app.js 与 public同一目录,所以拼接一个'.'。
 
 
 **补充说明：**
