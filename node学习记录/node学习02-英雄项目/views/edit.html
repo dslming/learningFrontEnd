@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0 auto;
+            border: 1px solid #000;
+            width: 400px;
+            height: 200px;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/postEdit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{id}}" />
+        <table>
+            <tr>
+                <td>姓名</td>
+                <td>
+                    <input type="text" name="name" value="{{name}}" />
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    {{if gender === "男"}}
+                    <input type="radio" name="gender" checked value="男" />男&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" value="女" />女 {{else}}
+                    <input type="radio" name="gender" value="男" />男&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" checked value="女" />女 {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <td>头像</td>
+                <td>
+                    <img src="{{icon}}" id="img" />
+                    <input type="file" id="preView" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <!-- <input type="button" value="提交" id="edit"> -->
+                    <button>提交</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script>
+    let imgSrc = "";
+    // 图片预览
+    $("#preView").on("change", (e) => {
+        let fm = new FormData();
+        fm.append("img", $("#preView")[0].files[0]);
+        $.ajax({
+            url: "/upload",
+            type: "POST",
+            dataType: "JSON",
+            data: fm,
+            contentType: false,
+            processData: false,
+            success: (obj) => {
+                if (obj.status === 200) {
+                    $("#img").attr("src", obj.src);
+                    imgSrc = obj.src;
+                }
+            }
+        });
+    });
+
+
+    $("#edit").on("click", () => {
+        // var fm  =  new FormData(document.querySelector("form"));
+        var fm = new FormData();
+        fm.append("icon", imgSrc);
+        fm.append("id", $("input[type=hidden]").val());
+        fm.append("name", $("input[name=name]").val());
+        fm.append("gender", $("input[type=radio]:checked").val());
+        $.ajax({
+            url: "/postEdit",
+            type: "POST",
+            dataType: "JSON",
+            data: fm,
+            contentType: false,
+            processData: false,
+            success: (obj) => {
+                if (obj.status === 200) {
+                    alert("添加成功!");
+                    location.href = "./index.html";
+                }
+            }
+        });
+    });
+
+    window.onload = ()=>{
+        
+    }
+</script>
+
+</html>

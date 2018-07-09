@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hero - Admin</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <style>
+    .hero-list img {
+      width: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="page-header container">
+      <h1>王者荣耀 <small>英雄管理器</small></h1>
+    </div>
+  </header>
+  <div class="container hero-list">
+    <a class="btn btn-success pull-right" href="/add">添加英雄</a>
+    <table class="table table-hover">
+      <thead>
+        <th>编号</th>
+        <th>名称</th>
+        <th>性别</th>
+        <th>头像</th>
+        <th>操作</th>
+      </thead>
+      <tbody id="tbody">
+        {{each herosArr item}}
+          <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.gender}}</td>
+            <td><img src="{{item.icon}}"></td>
+            <td>
+                <a href="javascript:void(0)" onclick="del({{item.id}})">删除</a>
+              <a href="./edit.html?id={{item.id}}">编辑</a>
+              <a href="javascript:;">查看</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<script>
+    function del(id) {
+      if(confirm("您确定要删除吗？")) {
+        window.location = "/del?id=" + id;
+      }
+    }
+  </script>
+</html>

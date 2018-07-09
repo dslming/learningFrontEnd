@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0 auto;
+            border: 1px solid #000;
+            width: 400px;
+            height: 200px;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/postAdd" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>姓名</td>
+                <td>
+                    <input type="text" name="name" value="jack"/>
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="gender" value="男" checked/>男&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" value="女" />女</td>
+            </tr>
+            <tr>
+                <td>头像</td>
+                <td>
+                    <img src="" id="img"/>
+                    <input type="file" id="preView"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <!-- <input type="submit" value="新增"> -->
+                    <!-- <button>新增</button> -->
+                    <input type="button" value="新增" id="add">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+
+<script>
+    let imgSrc = "";
+
+    // 图片预览
+    $("#preView").on("change", (e)=>{
+         let fm  =  new FormData();
+         fm.append("img", $("#preView")[0].files[0]);
+         $.ajax({
+             url:"/upload",
+             type:"POST",
+             dataType:"JSON",
+             data:fm,
+             contentType: false,
+             processData: false,
+             success:(obj)=>{
+                 if(obj.status === 200){
+                    $("#img").attr("src",obj.src);
+                    imgSrc = obj.src;
+                 }
+             }
+         });
+    });
+
+   // 提交表单,因为要拼接img的src属性也要添加到表单中，所以重新写他的点击事件
+    $("#add").on("click",()=>{
+        var fm  =  new FormData(document.querySelector("form"));
+        fm.append("icon",imgSrc);
+        $.ajax({
+             url:"/postAdd",
+             type:"POST",
+             dataType:"JSON",
+             data:fm,
+             contentType: false,
+             processData: false,
+             success:(obj)=>{
+                 if(obj.status === 200){
+                     alert("添加成功!");
+                     location.href = "./index.html";
+                 }
+             }
+         });
+    });
+</script>
+</html>
