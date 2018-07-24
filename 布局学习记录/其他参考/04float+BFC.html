@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*  
+           float+ BFC  Block Formatting Contexts 即块级格式化上下文，其中 Formatting Context 是一个决定如何渲染文档的容器 IFC
+            触发BFC:
+            1.设置除 float:none 以外的属性值（如：left | right）就会触发BFC
+　　        2.设置除 overflow: visible 以外的属性值（如： hidden | auto | scroll）就会触发BFC
+
+
+            缺点: 1 要清除浮动 
+        */
+        .content {
+            overflow: hidden;
+        }
+        .left {
+            width: 120px;
+            height: 300px;
+            float: left;
+            background-color: aqua;
+        }
+        .right {
+            height: 100px;
+            overflow: hidden;
+            background-color: red;
+        }
+        .footer {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="left">固定宽度</div>
+        <div class="right">自适应</div>
+    </div>
+    <div class="footer">
+        后面的一个DIV，以确保前面的定位不会导致后面的变形
+    </div>
+</body>
+</html>

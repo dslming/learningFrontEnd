@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" contenteditable="false">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/views/axios.js"></script>
+    <script src="/views/vue.js"></script>
+</head>
+
+
+
+
+<body>
+    <style>
+        table {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 800px;
+            text-align: center;
+        }
+
+        tr,
+        td,
+        th {
+            border: 1px solid #000;
+            height: 30px;
+        }
+    </style>
+    <table id="app">
+        <tr>
+            <td colspan="3">
+                名称 :
+                <input type="text" v-model="name">
+                <button v-on:click="add">{{option}}</button>
+            </td>
+        </tr>
+
+        <tr v-color="color">
+            <th>ID</th>
+            <th>品牌名称</th>
+            <th>操作</th>
+        </tr>
+
+        <tr v-for="(item,index) in dataList">
+            <td>{{item.userid}}</td>
+            <td>{{item.username}}</td>
+            <td>
+                <a href="javascript:;" v-on:click="edit(index)">编辑</a>
+                <a href="javascript:;" v-on:click="del(item.userid)">删除</a>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        Vue.directive("color", {
+            inserted: function (el, binging) {
+                el.style.background = binging.value;
+            }
+        });
+
+        var vw = new Vue({
+            el: "#app",
+            data: {
+                dataList: [],
+                color: '#0094ff',
+                name: "",
+                option: "添加",
+                nextId:1,
+                currentID: 0,
+            },
+            methods: {
+                add: function () {
+                    var that = this;
+                    if (this.option == "添加") {
+                        if (this.name == "") {
+                            return;
+                        }
+
+                        var url = "/insertByName.php?userid="+that.nextId;
+                        var params = new URLSearchParams();
+                        params.append("username", this.name);
+                        axios
+                            .post(url, params)
+                            .then(function (res) {
+                                if (res.data.statu == 200) {
+                                    alert(res.data.msg);
+                                    that.getList();
+                                }
+                            });
+
+                    } else if (this.option == "修改") {
+                        var url = "/updata.php";
+                        var params = new URLSearchParams();
+                        params.append("username", this.name);
+                        params.append("userid", this.currentID);
+                        axios
+                            .post(url, params)
+                            .then(function (res) {
+                                if (res.data.statu == 200) {
+                                    alert(res.data.msg);
+                                    that.getList();
+                                }
+                            });
+                        this.option = "添加";
+                    }
+
+                    this.id = "";
+                    this.name = "";
+                },
+                del: function (userid) {
+                    // this.dataList.splice(index, 1);
+                    // console.log(userid);
+                    var that = this;
+                    var url = "/deleteById.php" + "?userid=" + userid;
+                    axios.get(url).then(function (res) {
+                        if (res.data.statu == 200) {
+                            alert(res.data.msg);
+                            that.getList();
+                        }
+                    });
+                },
+                edit: function (index) {
+                    this.currentID = this.dataList[index].userid;
+                    this.name = this.dataList[index].username;
+                    this.option = "修改";
+                },
+                getList: function () {
+                    var that = this;
+                    var url = "/listById.php";
+                    axios.get(url).then(function (res) {
+                        if (res.data.statu == 200) {
+                            that.dataList = res.data.dataList;
+                            if(that.dataList.length==0){
+                                that.nextId = 1;
+                            }else{
+                                that.nextId = that.dataList[that.dataList.length-1].userid+1;
+                            }
+                        }
+                    });
+                }
+            },
+            created: function () {
+                this.getList();
+            }
+        });
+
+    </script>
+</body>
+
+
+</html>

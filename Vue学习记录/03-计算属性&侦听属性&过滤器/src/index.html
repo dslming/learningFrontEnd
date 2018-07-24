@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="./vue.js"></script>
+
+    <div id="app">
+            北京天气:{{air}}     %      <br/>
+            北京空气:{{wither}}  %      <br/>
+            
+            
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                air: "100",
+                wither:"100"
+            },
+            watch:{
+                air:function(value){
+                    this.wither = value;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

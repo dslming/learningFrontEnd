@@ -50,7 +50,7 @@
 
 #### 3 v-bind
 
-用法一,监控属性
+用法一,监控属性。可以简写为`:`
 
 ```html
     <!-- 03,v-bind属性绑定 -->
@@ -96,6 +96,23 @@ eg:
  //https://www.baidu.com/?id=5
 </script>
 ```
+注意：
+
+1)不能绑定数组:
+
+```js
+<div v-bind:data-index="index[0]"></div>
+
+data(){
+	return index:[0,1,2,3]
+}
+
+// 后面通过改变this.index[0]的值，dom身上不会发生变化。
+
+```
+
+
+
 ### 二、双向数据绑定
 
 #### 1 v-model

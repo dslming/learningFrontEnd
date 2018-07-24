@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            使用 position: absolute + margin-left 方法
+
+            缺点: 没有清除浮动的方法
+                只能通过设置父容器的min-height来放置这种情况。
+         */
+        .content {
+            min-height: 300px;
+        }
+        .left {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            background-color: aqua;
+        }
+
+        .right {
+            height: 100px;
+            margin-left: 200px;
+            background-color: blue;
+        }
+
+        .footer {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="left">固定宽度</div>
+        <div class="right">自适应</div>
+    </div>
+    <div class="footer">
+        后面的一个DIV，以确保前面的定位不会导致后面的变形
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*  
+            剩余空间分配数
+                fr单位被用于在一系列长度值中分配剩余空间，如果多个已指定了多个部分，
+                则剩下的空间根据各自的数字按比例分配。
+        */
+
+        .content {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+        }
+
+        .left {
+            height: 300px;
+            background-color: aqua;
+        }
+
+        .right {
+            height: 100px;
+            background-color: blue;
+        }
+
+        .footer {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="left">固定宽度</div>
+        <div class="right">自适应</div>
+    </div>
+    <div class="footer">
+        后面的一个DIV，以确保前面的定位不会导致后面的变形
+    </div>
+</body>
+
+</html>

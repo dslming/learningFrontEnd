@@ -1,0 +1,69 @@
+<template>
+    <li>
+        <h3>
+            <input type="checkbox" @click="itemCheck(index)">
+            <p class="item-label" 
+            v-bind:class="{ 'line-through': checked }">
+            {{ index + 1 }} . {{ todoItem.text  }} 
+            </p>
+            <p class="item-status" v-if="todoItem.done">finished</p>
+            <p class="item-delete" @click="deleteClick">Delete</p>
+        </h3>
+    </li>
+</template>
+
+<script>
+export default {
+  name: "todo",
+  props: {
+    todoItem: Object,
+    index: Number
+  },
+  data() {
+    return {
+      checked: false
+    };
+  },
+  methods: {
+    itemCheck(index) {
+      this.$store.commit("toggleTodo", this.index);
+    },
+    deleteClick() {
+      this.$store.commit("deleteTodo", this.index);
+    }
+  }
+};
+</script>
+
+<style scoped>
+.todo-line {
+  height: 30px;
+}
+.item-status {
+  display: inline;
+  background: rgb(67, 204, 67);
+  color: white;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.item-delete {
+  display: none;
+  text-decoration: underline;
+  font-size: 12px;
+  color: gray;
+  cursor: pointer;
+}
+.item-label {
+  display: inline;
+}
+.line-through {
+  text-decoration: line-through;
+}
+h3:hover {
+  text-decoration: line-through;
+}
+h3:hover .item-delete {
+  display: inline;
+}
+</style>
+

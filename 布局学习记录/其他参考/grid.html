@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            grid-template-columns 写入了 3 个值，这样我们就会得到 3 列
+            grid-template-rows 指定了2个值 两行
+         */
+        .wrapper {
+            display: grid;
+            grid-template-columns: 100px 120px 1fr;
+            grid-template-rows: 50px 50px;
+        }
+    
+    
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div style="background-color: red;">1</div>
+        <div style="background-color: blue;">2</div>
+        <div style="background-color: yellow;">3</div>
+        <div style="background-color: pink;">4</div>
+        <div style="background-color: aqua;">5</div>
+        <div style="background-color: yellowgreen;">6</div>
+    </div>
+</body>
+
+</html>

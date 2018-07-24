@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            calc() = calc(四则运算)
+            用于动态计算长度值。
+            需要注意的是，运算符前后都需要保留一个空格，例如：width: calc(100% - 10px)；
+            任何长度值都可以使用calc()函数进行计算；
+            calc()函数支持 "+", "-", "*", "/" 运算；
+            calc()函数使用标准的数学运算优先级规则；
+         */
+
+        #left {
+            float: left;
+            width: 200px;
+            background-color: aqua;
+        }
+
+        #right {
+            float: right;
+            width: calc(100% - 200px);
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="left">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati
+        totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+    </div>
+    <div id="right">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore provident dolor in voluptatum tempore non, placeat obcaecati
+        totam ut delectus libero excepturi distinctio asperiores odit nobis soluta, esse aspernatur beatae.
+    </div>
+</body>
+
+</html>

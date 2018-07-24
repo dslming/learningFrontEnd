@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+            1. 是固定宽度的div脱离文档流。 
+            2. 利用marin负值可以使得，后面的div可以与前面的div 保持同行显示。 
+            3. 给包裹内容的div加margin-left 可以使得与左边的文字不重叠
+         */
+
+       .left {
+           float: left;
+           margin-right: -200px;
+           width: 200px;
+           background-color: aqua;
+       } 
+       .right {
+           float: right;
+       }
+       .content {
+           margin-left: 200px;
+           background-color: red;
+       }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="left"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia labore facere delectus quaerat expedita, tenetur recusandae tempora eos natus suscipit voluptatum necessitatibus soluta voluptates modi ullam. Ab minima similique, illum!</div>
+    <div class="right">
+        <div class="content">   
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia labore facere delectus quaerat expedita, tenetur recusandae tempora eos natus suscipit voluptatum necessitatibus soluta voluptates modi ullam. Ab minima similique, illum!
+        </div>
+    </div>
+</body>
+</html>

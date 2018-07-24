@@ -133,7 +133,7 @@
                 console.log(this.run);
             },
             destroyed:function(){
-                console.group("beforeDestroy 销毁前 状态"); 
+                console.group("destroyed 销毁完 状态"); 
                 console.log("el              " + this.$el);// obj
                 console.log(this.$el);
                 console.log("data            " + this.message);// hello

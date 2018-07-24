@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //---- 1.0----
+        // function getInfo() {
+        //     setTimeout(() => {
+        //         return "北京天气35度"
+        //     }, 5000);
+        // }
+        // var ret = getInfo();
+        // console.log(ret);
+
+        //----2.0----
+        // function getInfo() {
+        //     setTimeout(() => {
+        //         return "北京天气35度"
+        //     }, 5000);
+        // }
+        // var pm = new Promise((resolve, rejeict) => {
+        //     var msg = getInfo();
+        //     resolve(msg);
+        // });
+        // pm.then((ret) => { console.log("获取了结果..."+ret);}, () => { });
+
+        // //----3.0----
+        // function getInfoNew() {
+        //     return new Promise((resolve, regict) => {
+        //         setTimeout(() => {
+        //             resolve("北京天气35度");
+        //         }, 5000);
+        //     });
+        // }
+        // var run = async function(){
+        //     var ret = await getInfoNew();
+        //     console.log(ret);
+        // }
+        // run();
+    </script>
+</body>
+
+</html>
