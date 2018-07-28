@@ -67,3 +67,62 @@ this.$router.push("/add");
 如果要动态给元素绑定类名，可以用js，但是太麻烦了，所以可以直接使用vue-router中的一个新标签。
 -  为了能够动态将active属性加到元素上，我们可以使用router-link中的一个属性：actvie-class:
 -  actvie-class：被激活时会添加的类名
+
+
+
+### 二、缓存部分组件
+
+#### 1)使用router.mate属性
+```js
+// 这是目前用的比较多的方式
+<keep-alive> 
+  <router-view v-if="!$route.meta.notKeepAlive"></router-view> 
+</keep-alive> 
+
+<router-view v-if="$route.meta.notKeepAlive"></router-view>
+```
+
+路由设置，非官方
+```js
+ //所有商铺列表页
+        {
+            path: '/msite',
+            component: msite,
+            meta: { keepAlive: true },
+        },
+```
+
+
+
+#### 2)使用新增属性inlcude/exclude
+
+2.1.0后提供了include/exclude两个属性 可以针对性缓存相应的组件
+
+```js
+<!-- comma-delimited string --> 
+  <keep-alive include="a,b">
+      <component :is="view"></component> 
+   </keep-alive>
+        
+<!-- regex (use v-bind) --> 
+  <keep-alive :include="/a|b/"> 
+    <component :is="view"></component> 
+   </keep-alive> //其中a,b是组件的name
+```
+
+注意:这种方法都是预先知道组件的名称的
+
+#### 3) 动态判断
+
+```js
+<keep-alive :include="includedComponents">
+  <router-view></router-view>
+</keep-alive>
+```
+
+includedComponents动态设置即可
+
+
+
+<全文结束>
+
