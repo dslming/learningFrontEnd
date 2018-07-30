@@ -1,0 +1,156 @@
+<!--
+目的：表格、表单、列表的简单示例
+时间：2018年3月5日
+作者：lianming
+联系：1097364388@qq.com
+版本：V0.0.1
+ -->
+
+ <!-- 
+主要内容：
+一、表格
+二、列表
+三、表单
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 1.1创建表格-->
+	<table>
+		<tr>
+			<td>我是单元格1</td>
+			<td>我是单元格2</td>
+		</tr>
+	</table>
+
+	<!-- 1.2常用属性 -->
+	<table border="0" cellspacing="0" width="300" height="20" align = "center">
+		<tr>
+			<td>我是单元格1</td>
+			<td>我是单元格2</td>
+		</tr>
+	</table>
+
+	<!-- 1.3 所有标签 -->
+	<table>
+		<caption>人员登记表</caption>
+		<!-- 表头 -->
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>年龄</th>
+			</tr>
+		</thead>
+		<!-- 表身 -->
+		<tbody>
+			<tr>
+				<td>张三</td>
+				<td>男</td>
+				<td>23</td>
+			</tr>
+
+			<tr>
+				<td>李四</td>
+				<td>女</td>
+				<td>80</td>
+			</tr>
+		</tbody>
+	</table>
+    
+    <!-- 1.4 单元格合并,从1行2列合并为1行1列  -->
+    <!-- 合并前 -->
+    <table>
+    	<tr>
+    		<td>单元格1</td>
+    		<td>单元格2</td>
+    	</tr>
+    </table>
+    <!-- 合并后 -->
+    <table>
+    	<tr>
+    		<td colspan="2">单元格1</td>
+    	</tr>
+    </table>
+
+    <!-- 2.1无序列表 -->
+    <ul>
+	    我最喜欢的女明星：
+		<li>刘诗诗</li>
+		<li>范冰冰</li>
+		<li>李冰冰</li>
+		<li>杨颖</li>
+	</ul>
+
+	<!-- 2.2有序列表 -->
+	<ol>                             
+        奖牌榜：
+    	<li>中国</li>
+    	<li>俄罗斯</li>
+    	<li>加拿大</li>
+    </ol>
+
+    <!-- 2.3自定义列表 -->
+    <dl>
+    	<dt>联系我</dt>
+    	<dd>手机号码</dd>
+    	<dd>电话号码</dd>
+    	<dd>邮箱地址</dd>
+    </dl>
+
+    <!-- 3.1表单的构成 -->
+    <form action="" method="">
+    	用户名：<input type="text" name="username"> <br><br>
+    	密码：<input type="password" name="pwd"> <br><br>
+    	<input type="submit" value="提交表单按钮">
+    </form>
+
+    <!-- 3.2 表单控件 -->
+    <!-- 1)单行文本框 -->
+    <input type="text" name="username">
+    <!-- 2)密码输入 -->
+    <input type="password" name="pwd">
+    <!-- 3)单选框 -->
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex">女
+    <!-- 4)复选框 -->
+    <input type="checkbox">帅
+    <input type="checkbox">美
+    <input type="checkbox">好看
+    <!-- 5)普通按鈕 -->
+    <input type="button" value="我是按鈕">
+    <!-- 6)提交按鈕 -->
+    <input type="submit" value="提交表單">
+    <!-- 7)图片按鈕 -->
+    <input type="image" src="images/bt.jpg" alt="按鈕圖片">
+    <!-- 8)文件 -->
+    <input type="file">
+	<!-- 9)文本域 -->
+    <textarea cols="100" rows="10">请输入文本</textarea>
+	<!-- 10)laber -->
+	<br>
+	<label> 
+		male <input type="radio" name="sex" value="male">   
+	</label>
+	<!-- 11)select -->
+	<select>
+	  <option selected="selected">--请选择我--</option>
+	  <option>选项1</option>
+	  <option>选项2</option>
+	  <option>选项3</option>
+    </select>
+
+    <!-- 3.3 表单属性 -->
+	male <input type="radio" name="sex" value="male" checked="checked"> 
+
+	<!-- 3.4 表单域 -->
+	<!-- 见3.1 -->
+
+<br>
+</body>
+</html>

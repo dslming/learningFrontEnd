@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    ul {
+      list-style: none;
+      width: 1300px;
+    }
+    
+    div {
+      width: 1200px;
+      height: 400px;
+      border: 2px solid red;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+    
+    div li {
+      width: 240px;
+      height: 400px;
+      float: left;
+    }
+    
+    div li.according1 {
+      background-image: url(images/1.jpg);
+    }
+    div li.according2 {
+      background-image: url(images/2.jpg);
+    }
+    div li.according3 {
+      background-image: url(images/3.jpg);
+    }
+    div li.according4 {
+      background-image: url(images/4.jpg);
+    }
+    div li.according5 {
+      background-image: url(images/5.jpg);
+    }
+  
+  </style>
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    $(function () {
+//    
+        //需求: 
+        // 1. 给每一个li注册mouseenter事件,鼠标移入让当前li展示出来
+
+        // 1.1 给li注册事件
+        $('#box > ul > li').mouseenter(function(){
+          //1.2 当前li展示出来,其他的li变小
+
+          $(this).stop(true).animate({width:800}).siblings().stop(true).animate({width:100});
+        })
+
+
+
+
+        // 2. 鼠标离开手风琴的时候,样式恢复默认.  给div注册鼠标移出事件
+
+        $('#box').mouseleave(function(){
+          $(this).children('ul').children().stop(true).animate({width:240});
+        })
+     
+     
+    });
+  </script>
+</head>
+<body>
+<div id="box">
+  <ul>
+    <li class="according1"></li>
+    <li class="according2"></li>
+    <li class="according3"></li>
+    <li class="according4"></li>
+    <li class="according5"></li>
+  </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+﻿* { margin: 0; padding: 0;}
+ul { list-style-type: none;}
+a { text-decoration: none; color: #428BCA; color: #1F8902; color: #555; color: #21B384; color: #444;}
+a:hover { text-decoration: underline; color: #6cc30d; color: #198764;}
+em, i { font-style: normal;}
+img { border: 0 none;}
+table { border-spacing: 0; border-collapse: collapse;}
+/*html5*/
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+
+body { border-top: 50px solid #323436; border-bottom: 50px solid #323436; font: 14px/24px Consolas,"Microsoft Yahei",Arial,"宋体"; color: #666; background-color: #f1f1f1;}
+
+.mt20 { margin-top: 20px; }
+
+.hd, .ft { width: 1180px; height: 50px; margin-left: auto; margin-right: auto;}
+.hd { position: relative; margin-top: -50px;}
+.hd h1 { float: left; margin-right: 20px;}
+.hd h1 a { float: left; width: 123px; height: 34px; margin-top: 8px; text-indent: -9999px; background-image: url(images/logo2.png);}
+.nav { float: left;}
+.nav li { float: left; margin-right: 1px;}
+.nav a { float: left; padding: 0 25px; line-height: 50px; color: #cecece;}
+.nav .cur, .nav a:hover { background-color: #4e4f51; text-decoration: none;}
+
+.search { float: right; /*width: 320px;*/ margin-top: 10px;}
+.search form { float: left; margin-right: 10px; background-color: #434649;}
+.search .key { float: left; width: 152px; height: 14px; padding: 9px; border: medium none; line-height: 14px; color: #8b8d90; background-color: transparent;}
+.search .go { float: left; width: 30px; height: 32px; border: medium none; text-indent: -9999px; background: url(images/yy-icon.png) -350px -176px no-repeat; cursor: pointer;}
+.search a { float: left; height: 32px; padding: 0 20px; line-height: 32px; text-align: center; color: #acacac; background-color: #505050; text-decoration: none;}
+.search a:hover { color: #fff;}
+.search .reg { color: #fff; background-color: #6cc30d; background-color: #21B384;}
+.search .reg:hover { background-color: #198764; background-color: #1FA67A;}
+/*.search .login { color: #fff; background-color: #1FA67A;}*/
+
+.main { width: 1180px; margin: 20px auto; overflow: hidden;}
+
+.list1 { overflow: hidden; zoom: 1; margin: -20px 0 0 -20px;}
+.list1 li { float: left; width: 280px; height: 230px; margin: 20px 0 0 20px; border-bottom: 1px solid #ddd; background-color: #fff; display: inline;}
+.list1 h2 { height: 24px; margin: 10px 0 5px; font-size: 12px; font-weight: 500; text-align: center; overflow: hidden;}
+.list1 h2 a { color: #454545;}
+.list1 img { display: block; width: 280px; height: 160px;}
+.list1 p { height: 24px; margin: 0 10px; font-size: 12px; color: #bfbfbf;}
+.list1 .description { display: none;}
+.list1 time { float: left;}
+.list1 .view { float: right;}
+.list1 .view span { margin-left: 5px;}
+.list1 .view span span { margin-left: 0;}
+
+.list2 { padding-bottom: 15px; overflow: hidden; zoom: 1;}
+.list2 li { float: left; width: 260px; margin: 20px 0 0 20px; background-color: #fff; overflow: hidden;}
+.list2 h4 { height: 24px; margin: 10px 0 5px; font-size: 12px; font-weight: 500; text-align: center; overflow: hidden;}
+.list2 h4 a { color: #454545;}
+.list2 img { display: block; width: 260px; height: 150px;}
+.list2 p { height: 24px; margin: 0 10px; font-size: 12px; color: #bfbfbf;}
+.list2 time { float: left;}
+.list2 .view { float: right;}
+
+/*.main { float: left; width: 940px;}*/
+.primary { float: left; width: 860px;}
+.article { background-color: #fff; padding: 20px;}
+.article h1 { font: 500 26px "Microsoft Yahei"; text-align: center;}
+.article p.info { margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #eee; color: #999; font-size: 12px; text-align: center;}
+.article p.info span { margin: 0 10px;}
+.article p.info span span { margin: 0;}
+.article h2 { padding-bottom: 10px; border-bottom: 1px solid #ddd; font: 700 18px "Microsoft Yahei"; margin: 24px 0;}
+.article h3 { font: 500 16px "Microsoft Yahei"; margin: 24px 0;}
+.article h4 { margin: 24px 0; font-size: 14px;}
+.article img { display: block; margin: 0 auto;}
+.article .wpfp-hide { display: none;}
+.article p.info .wpfp-span { margin-right: 0;}
+.article a { color: #6cc30d; color: #21B384;}
+.article a:hover { color: #198764;}
+.vad { text-align: center; font-size: 0;}
+.vad a { display: inline-block; width: 180px; height: 40px; margin: 0 10px; line-height: 40px; text-align: center; font-size: 14px; color: #fff !important; background-color: #AAE16D; background-color: #EB8E73; background-color: #95E144; background-color: #3EB0D8; background-color: #70CA10; background-color: #21B384;}
+.vad a:hover { text-decoration: none; background-color: #6cc30d; background-color: #EB6C47; background-color: #6CC30D; background-color: #198764; background-color: #1d9d74; background-color: #1FA67A;}
+.article .vad .bdsharebuttonbox { display: inline-block; margin: 0 10px; vertical-align: top;}
+.article .vad .bdshare-button-style0-24 a { height: 40px; margin: 0 !important; padding: 0; line-height: 40px; font-size: 14px; background-image: none;}
+.article p { margin: 24px 0;}
+.article .thead { width: 728px; margin: 0 auto;}
+.article table { width: 100%;}
+.article th, .article td { padding: 10px; border: 1px solid #ddd;}
+.article ul, article ol { padding-left: 30px;}
+.article ul { list-style-type: disc;}
+.article ol { list-style-type: decimal;}
+.article .browsers { text-align: center;}
+.article pre { max-height: 400px; padding: 10px; border: 1px solid #f0f0f0; font: 13px/24px Consolas,"Lucida Sans Typewriter","Lucida Console",Monaco,"Bitstream Vera Sans Mono",monospace; background-color: #f8f8f8; overflow: auto;}
+
+.article .tag { margin-bottom: 0;}
+.tag a { display: inline-block; margin-right: 10px; padding: 0 10px; background-color: #EDEDED; color: #838383;}
+.tag a:hover { background-color: #65686a; color: #fff; text-decoration: none;}
+
+.xg { margin-top: 20px; background-color: #fff;}
+.xg .tt1 { margin-bottom: 0; color: #444;}
+
+.secondary { float: right; width: 300px; font-size: 12px;}
+
+.slidebar { margin-bottom: 20px; overflow: hidden; zoom: 1;}
+.slide { float: left; width: 824px; overflow: hidden;}
+.slidebar img { display: block;}
+.slidebar .thead { float: right; width: 336px; overflow: hidden;}
+
+/* 侧边栏 */
+.secondary { float: right; width: 300px; margin-top: -20px;}
+aside { margin-top: 20px; background-color: #fff;}
+aside h3 { border-bottom: 1px solid #D1D1D1; font: 16px "Microsoft Yahei";}
+aside h3 span { position: relative; top: 1px; display: inline-block; padding: 10px 15px; border-bottom: 1px solid #636363; color: #444;}
+.list3 { overflow: hidden; zoom: 1;}
+.list3 li { height: 48px; margin: 15px; overflow: hidden;}
+.list3 img { float: left; width: 80px; height: 48px; margin-right: 10px;}
+
+.tt1 { margin-bottom: 15px; border-bottom: 1px solid #D1D1D1; font: 16px "Microsoft Yahei";}
+.tt1 span { position: relative; top: 1px; display: inline-block; padding: 10px 15px; border-bottom: 1px solid #636363;}
+
+.tt2 { height: 44px; margin: 20px 0 20px; line-height: 44px; border-bottom: 2px solid #21B384; background: #E8E8E8; overflow: hidden;}
+.tt2 h2 { float: left; padding: 0 25px; font: 18px/44px "Microsoft Yahei"; color: #fff; background-color: #21B384;}
+.tt2 h2 a { color: #fff; text-decoration: none;}
+.tt2 span { float: left; font-size: 0;}
+.tt2 span a { margin-left: 20px; font-size: 12px; color: #999;}
+
+.tt3 { height: 44px; margin: 20px 0 20px; line-height: 44px; border-bottom: 2px solid #21B384; background: #E8E8E8; overflow: hidden;}
+.tt3 h2 { float: left; padding: 0 20px; font: 18px/44px "Microsoft Yahei"; color: #444;}
+
+.wp-pagenavi { zoom: 1; padding-top: 20px; text-align: right;}
+.wp-pagenavi:after { content: ""; display: block; clear: both; height: 0; visibility: hidden }
+.wp-pagenavi a, .wp-pagenavi span { display: inline-block; height: 14px; padding: 8px 9px; line-height: 14px; font-family: "Microsoft Yahei"; margin-left: 5px; /*vertical-align: bottom;*/}
+.wp-pagenavi a, .wp-pagenavi a:link, .wp-pagenavi a:active, .wp-pagenavi .pages { text-decoration: none; color: #a9a9a9; background-color: #FFF; font-size: 14px; width: auto!important; width: 12px; white-space: nowrap; min-width: 12px; text-align: center }
+.wp-pagenavi a:hover { color: #fff; background-color: #999;}
+.wp-pagenavi span.current { color: #fff; background-color: #6bc30d; font-size: 14px; width: auto!important; width: 12px; white-space: nowrap; min-width: 12px; text-align: center; background-color: #21B384;}
+.wp-pagenavi span.extend {color: #a9a9a9;}
+
+.ft { height: 50px; margin-bottom: -50px; line-height: 50px; font-size: 12px; color: #cecece;}
+.ft p { float: left; margin: 0;}
+.ft a { color: #cecece;}
+.gotop { float: right; width: 40px; height: 40px; margin: 5px -40px 0 0; line-height: 40px; background: #434649 url(images/yy-icon.png) -90px -100px no-repeat; text-indent: -9999px;}
+
+
+/* ad */
+.ad-bar-90 { height: 90px; }
+.ad300x250 { width: 300px; height: 250px; overflow: hidden;}
+.ads580x90 { height: 90px;}
+.ad580x90 { width: 580px; height: 90px; overflow: hidden;}
+.adl { float: left;}
+.adr { float: right;}
+
+
+/*@font-face{font-family:'FontAwesome';src:url('fonts/fontawesome-webfont.eot?v=4.1.0');src:url('fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),url('fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
+.fa{display:inline-block;font-family:FontAwesome; *font-family: "Microsoft Yahei"; font-style:normal; line-height: 1; *line-height: normal;font-weight:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fa { position: relative; margin-right: 3px; *margin-right: 0; font-size: 0; *font-size: 12px; padding-left: 14px; *padding-left: 0;}
+.fa:before { position: absolute; left: 0; top: -11px; *top: 0; font-size: 14px;}
+.fa-calendar-o:before {content:"\f133"}
+.fa-eye:before {content:"\f06e"}
+.fa-comment-o:before { content:"\f0e5"}
+.fa-folder-open-o:before{content:"\f115"}
+.fa-clock-o:before { content: "\f017"}*/
+
+.tongji { display: none;}
+
+/* 最新评论 */
+.ds-recent-comments { margin: 0 15px;}
+#ds-recent-comments li.ds-comment { padding: 15px 0 15px 60px !important; border-top: 0 !important; border-bottom: 1px solid #eee;}
+
+/* 多说 */
+#ds-thread { padding: 14px 20px;}
+#ds-recent-comments li.ds-comment { border-top: 0 !important; border-bottom: 1px solid #eee;}
+
+/* 兑换 */
+.mycred-content-forsale .button { width: 80px; height: 30px; border: 1px solid #eb8e73; color: #fff; background-color: #eb8e73; cursor: pointer;}
+
+/* dwoad */
+.dwoad { position: relative; }
+/*.dwoad:after { content: ""; position: absolute; left: 0; bottom: 0; width: 42px; height: 20px; background-image: url(http://img1.dowebok.com/iad/ad.png); }*/
+.dwoad img { display: block; }
+.dwoad-1 { margin-bottom: 20px; }
+.dwoad-wrap-1 { width: 1180px; margin: 20px auto 0;}
+
+.secondary .down { padding: 15px;}
+.secondary .down a { display: block; height: 40px; line-height: 40px; text-align: center; font-size: 14px; color: #fff !important; background-color: #AAE16D; background-color: #EB8E73; background-color: #95E144; background-color: #3EB0D8; background-color: #70CA10; background-color: #21B384;}
+.secondary .down a:hover { text-decoration: none; background-color: #6cc30d; background-color: #EB6C47; background-color: #6CC30D; background-color: #198764; background-color: #1d9d74; background-color: #1FA67A;}
+
+.WB_loginButton { margin: 4px 0 0 10px !important; }
+.WB_loginButton a { width: auto; height: auto; line-height: normal; }
+
+.menu { float: left; width: 200px; height: 680px; padding-top: 20px; border-right: 1px solid #ddd; text-align: center;}
+.menu img { border-radius: 50%; }
+.menu ul { padding-top: 50px; }
+.menu a { display: block; line-height: 40px; }
+.menu .active { color: #21B384; }
+.menu-txt { float: right; width: 939px; padding: 20px; }
+.menu-txt h2 { margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid #ddd; font-size: 16px; font-weight: 400; } 
+.menu-txt li { line-height: 36px; }
+.menu-txt li span { display: inline-block; width: 100px; text-align: right; }
+.wpfp-span ul { margin-bottom: 20px; }
+.wpfp-span li { height: 36px; border-bottom: 1px dashed #ddd; line-height: 36px; }
+.wpfp-span li a { float: left; }
+.wpfp-span li .remove-parent { float: right; }
+.wpfp-span .wpfp-img { display: none; }

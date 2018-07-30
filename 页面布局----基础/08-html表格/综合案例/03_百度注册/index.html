@@ -1,0 +1,113 @@
+<!-- 
+一、基本信息
+日期：2018年3月6日
+作者：lianming
+版本：v0.0.1
+联系：1097364388@qq.com
+ -->
+
+<!-- 
+二、创作目的
+练习使用表单
+1)常用控件
+2)属性
+ -->
+
+ <!-- 
+ 三、创作效果
+目标：实现一个百度的注册信息采集。
+思路：通过表格控制页面布局，为一个2列多行的表格。
+      在每个单元格中添加不同的控件实现信息的采集。
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
+	<!-- 整体为一张表单 -->
+	<form action="">
+		<!-- 整体为一张大表 -->
+		<table width="600" cellspacing="15" border="0" align="center">
+			<thead></thead>
+
+			<tbody>
+				<tr height="15">
+					<td>
+						<img src="images/logo_baidu.jpg" alt="">
+					</td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td>
+						<strong>添加注册信息</strong>
+					</td>
+					<td></td>
+				</tr>
+
+				<!-- 邮箱 -->
+				<tr>
+					<td align="right">邮箱：</td>
+					<td>
+						<input type="text" value="请输入邮箱...">
+					</td>
+				</tr>
+
+				<!-- 密码 -->
+				<tr>
+					<td align="right">密码：</td>
+					<td>
+						<input type="password">
+					</td>
+				</tr>
+
+			    <!-- 确认密码 -->
+				<tr>
+					<td align="right">确认密码：</td>
+					<td>
+						<input type="password">
+					</td>
+				</tr>
+
+			   <!-- 验证码 -->
+				<tr>
+					<td align="right">验证码：</td>
+					<td>
+						<input type="text">
+						<img src="images/yz.jpg" alt="" height="30">
+						<a href="#">用户注册</a>
+					</td>
+				</tr>
+
+				<!-- 协议 -->
+				<tr>
+					<td></td>
+				    <td>
+						<input type="checkbox">我已阅读并接受
+						<a href="#">《百度用户协议》</a>
+				    </td>
+				</tr>
+				
+				<!-- 按钮 -->
+				<tr>
+					<td></td>
+					<td>
+						<input type="image" src="images/button.jpg">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="reset" value="重新填写">
+					</td>					
+				</tr>
+
+			</tbody>
+		</table>	
+	</form>
+
+</body>
+</html>

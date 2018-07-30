@@ -1,0 +1,149 @@
+<!-- 
+一、基本信息
+日期：2018年3月6日
+作者：lianming
+版本：v0.0.1
+联系：1097364388@qq.com
+ -->
+
+<!-- 
+二、创作目的
+练习使用表单
+1)常用控件
+2)属性
+ -->
+
+ <!-- 
+ 三、创作效果
+目标：实现一个婚恋网的注册信息采集。
+      包括年龄，照片，婚姻状况等。
+思路：通过表格控制页面布局，为一个2列多行的表格。
+      在每个单元格中添加不同的控件实现信息的采集。
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>佳缘网,我在这里等你</title>
+</head>
+<body>
+	<!-- 整体为一张大表单 -->
+	<form action="">
+		<!-- 通过表格布局 -->
+		<table align="center" width="600" cellspacing="0">
+			<caption>
+				<h2>青春不常在,抓紧谈恋爱</h2>
+			</caption>
+			
+			<thead></thead>
+			<tbody>
+				<!-- 性別 -->
+				<tr>
+					<td>性别:</td>
+					<td>
+						<input type="radio" name="sex" checked="checked">男
+						<img src="images/man.jpg" alt="">
+						<input type="radio" name="sex">女 
+						<img src="images/women.jpg" alt="">
+					</td>
+				</tr>
+
+				<!-- 婚姻狀況 -->
+				<tr>
+					<td>婚姻状况:</td>
+					<td>
+						<input type="radio" name="marry" checked="checked">未婚
+						<input type="radio" name="marry">离婚
+					</td>
+				</tr>
+				
+				<!-- 用户名 -->
+				<tr>
+					<td>用户名：</td>
+					<td>
+						<input type="text" value="输入用户名...">
+					</td>
+				</tr>
+
+				<!-- 密码 -->
+				<tr>
+					<td>用户名：</td>
+					<td>
+						<input type="password">
+					</td>
+				</tr>
+				
+				<!-- 生日选择 -->
+				<tr>
+					<td>出生日期：</td>
+					<td>
+						<select name="" id="">
+							<option value="">1990</option>
+							<option value="">1991</option>
+							<option value="">1992</option>
+							<option value="">1993</option>
+							<option value="" selected="selected">--请选择年--</option>
+						</select>
+
+						<select name="" id="">
+							<option value="">1</option>
+							<option value="">2</option>
+							<option value="">3</option>
+							<option value="">4</option>
+							<option value="" selected="selected">--请选择月--</option>
+						</select>
+
+						<select name="" id="">
+							<option value="">1</option>
+							<option value="">2</option>
+							<option value="">3</option>
+							<option value="">4</option>
+							<option value="" selected="selected">--请选择日--</option>
+						</select>
+					</td>
+				</tr>
+
+				<!-- 喜欢的女生类型 -->
+				<tr>
+					<td>喜欢的女生类型：</td>
+					<td>
+						<input type="checkbox">可爱
+						<input type="checkbox">甜美
+						<input type="checkbox">小清晰
+						<input type="checkbox">萌妹子
+					</td>
+				</tr>
+
+				<!-- 上传头像 -->
+				<tr>
+					<td>上传头像</td>
+					<td>
+						<input type="file">
+					</td>
+				</tr>
+
+				<!-- 留言区 -->
+				<tr>
+					<td>请您留言:</td>
+					<td>
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+					</td>
+				</tr>
+				<br>
+
+				<!-- 按钮区域 -->
+				<tr>
+					<td></td>
+					<td>
+						<input type="button" value="搜索按钮">
+						<input type="submit" value="提交按钮"> 
+						<input type="reset" value="重置按钮"> 
+						<input type="image" src="images/btn.png"> 
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

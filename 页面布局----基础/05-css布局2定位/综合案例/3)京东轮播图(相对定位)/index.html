@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+		
+		li {
+			list-style: none;
+		}
+		
+		.main {
+			width: 590px;
+			height: 470px;
+			background-color: red;
+			margin: 100px auto;
+			position: relative;
+		}
+
+		.right,
+		.left {
+			position: absolute;
+			width: 25px;
+			height: 40px;
+			background-color: rgba(0,0,0,0.2);
+            margin-top: -20px;
+            line-height: 40px;
+            text-align: center;
+		}
+
+		.right {
+			top: 50%;
+			right: 0px;
+		}
+
+		.left {
+			top: 50%;
+			left: 0px;
+		}
+
+		.circle {
+			width: 143px;
+			height: 20px;
+			/*background-color: red;*/
+			position: absolute;
+			bottom: 10px;
+			right: 0px;
+			left: 50%;
+			margin-left: -70px;
+		}
+
+		.circle li{
+			width: 10px;
+			height: 10px;
+			background-color: #1B7DC8;
+			float: left;
+			border: 1px solid #fff;
+			margin-left: 10px;
+			border-radius: 50%;
+
+		}
+
+		.circle li:hover {
+			background-color: #fff;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<img src="images/jd.jpg" alt="">
+		<a href="#" class="right">&gt;</a>
+		<a href="#" class="left">&lt;</a>
+
+		<div class="circle">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</div>
+
+	</div>
+</body>
+</html>

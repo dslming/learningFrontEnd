@@ -1,0 +1,70 @@
+<!-- 
+练习表格的使用 
+包括：
+1)table
+2)caption
+3)thead
+4)tr
+5)th
+6)td
+
+注意：
+1)table标签中仅能出现自己支持的标签,其他标签无意义。
+2)th和td标签中可以嵌套其他标签;而tr标签只能嵌套td或th标签。
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table border="1" cellspacing="0">
+		<caption>
+			<h2>小说排行榜</h2>
+		</caption>
+
+		<thead>
+			<tr>
+				<th>排名</th>
+				<th>关键字</th>
+				<th>趋势</th>
+				<th>今日搜索</th>
+				<th>最近七日</th>
+				<th>相关链接</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>鬼吹灯</td>
+				<td><img src="images/up.jpg" alt=""></td>
+				<td>1234</td>
+				<td>1234</td>
+				<td>
+					<a href="#">图片</a>
+					<a href="#">贴吧</a>
+					<a href="#">小说</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td>盗墓笔记</td>
+				<td><img src="images/down.jpg" alt=""></td>
+				<td>5687</td>
+				<td>1254</td>
+				<td>
+					<a href="#">图片</a>
+					<a href="#">贴吧</a>
+					<a href="#">小说</a>
+				</td>
+			</tr>
+		</tbody>
+
+
+	</table>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/sHover.js"></script>
+  <style>
+    ul {
+      list-style: none;
+    }
+    .box {
+      overflow: hidden;
+    }
+    .box .h-item {
+      float: left;
+      margin: 5px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+      width: 260px;
+      height: 180px;
+    }
+    .box .h-item img {
+      width: 100%;
+      height: 100%;
+    }
+    .box .h-info {
+      font-size: 30px;
+      line-height: 50px;
+      text-align: center;
+      color: white;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 最外层父容器 -->
+  <div class="box">
+    <ul>
+      <li class="h-item">
+        <img src="images/1.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/2.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/3.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/4.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/5.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/6.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/7.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/8.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/9.jpg" alt="">
+        <div class="h-info">你好, 朋友</div>
+      </li>
+      <li class="h-item">
+        <img src="images/10.jpg" alt="">
+        <div class="h-info"></div>
+      </li>
+      <li class="h-item">
+        <img src="images/11.jpg" alt="">
+        <div class="h-info"></div>
+      </li>
+      <li class="h-item">
+        <img src="images/12.jpg" alt="">
+        <div class="h-info"></div>
+      </li>
+    </ul>
+  </div>
+  <script>
+    
+    // 实例初始化
+    var hoverExm = new sHover("h-item", "h-info");
+    
+    hoverExm.set({
+      // 设置滑动速度, 默认值为5，取值范围0-10
+      speed: 7,
+      // 设置透明度, 设置悬浮层的最终透明度，默认值为100，取值范围0-100
+      opacity: 90,
+      // 是否开启滑动时淡入淡出
+      opacityChange: false
+    });
+
+
+  </script>
+</body>
+</html>

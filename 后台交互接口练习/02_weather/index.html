@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        div {
+            margin-top: 20px;
+            width: 1366px;
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-top: 50px;
+            border: 2px solid #ddd;
+            height: 200px;
+        }
+
+        li {
+            text-align: center;
+            width: 180px;
+            background-color: #ccc;
+            margin-left: 12px;
+            float: left;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="city">
+    <button id="btn">查询天气</button>
+
+    <div>
+        <p id="cityname">城市名称：</p>
+        <ul id="weather">
+            <li>
+                <p class="date">20日星期五</p>
+                <p class="high">高温 25℃</p>
+                <p class="low">低温 14℃</p>
+            </li>
+            <li>
+                <p class="date">日期</p>
+                <p class="high">高温 25℃</p>
+                <p class="low">低温 14℃</p>
+            </li>
+            <li>
+                <p class="date">日期</p>
+                <p class="high">高温 25℃</p>
+                <p class="low">低温 14℃</p>
+            </li>
+            <li>
+                <p class="date">日期</p>
+                <p class="high">高温 25℃</p>
+                <p class="low">低温 14℃</p>
+            </li>
+            <li>
+                <p class="date">日期</p>
+                <p class="high">高温 25℃</p>
+                <p class="low">低温 14℃</p>
+            </li>
+        </ul>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    //找到所有li标签
+    var liList = document.getElementsByTagName('li');
+
+    //找到城市文本框
+    var city = document.getElementById('city');
+
+    //监听按钮的点击事件
+    document.getElementById('btn').onclick = function(){
+        
+        //取到城市文本框的值 city.value
+
+        //发起请求
+        var xhr = new XMLHttpRequest();
+        xhr.open('get','http://wthrcdn.etouch.cn/WeatherApi?city=' + city.value);
+        xhr.send();
+
+        //响应完成的事件
+        xhr.onreadystatechange = function(){
+
+            if(xhr.readyState == 4 && xhr.status == 200){
+
+                var forecast = xhr.responseXML.getElementsByTagName('forecast')[0];
+                //再找到近五日的天气
+                var weatherlist = forecast.getElementsByTagName('weather');
+                
+                //遍历每天的天气
+                for(var i = 0; i < weatherlist.length; i++){ //i的值0-4
+
+                    //weatherlist[i]的内容 要给 liList[i] 去显示 
+
+                    //这里取到weatherlist[i]的内容
+                    var date = weatherlist[i].getElementsByTagName('date')[0].innerHTML;
+                    var high = weatherlist[i].getElementsByTagName('high')[0].innerHTML;
+                    var low = weatherlist[i].getElementsByTagName('low')[0].innerHTML;
+                    
+                    //把内容分别给li标签下的每个p
+                    liList[i].children[0].innerHTML = date;
+                    liList[i].children[1].innerHTML = high;
+                    liList[i].children[2].innerHTML = low;
+                }
+                
+            }
+        }
+    };
+
+
+</script>

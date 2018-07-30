@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .chatBox{
+
+            width: 400px;
+            border: 1px solid gainsboro;
+            margin: 50px auto;
+        }
+
+        .container{
+            width: 100%;
+            height: 550px;
+            background-color: #fff;
+            padding: 0;
+            list-style: none;
+            overflow: auto;
+        }
+
+        .sendBox{
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .robot{
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .chat-icon{
+            width: 40px;
+            height: 40px;
+            display:inline-block;
+            border-radius: 20px;
+            background: url('images/fbb.jpg') 0% 0% / 100% 100% no-repeat;
+        }
+
+        .robot .text{
+            border-radius: 8px;
+            background-color: #f4f7f9;
+            margin-left: 10px;
+            max-width: 210px;
+            line-height: 20px;
+            word-break: break-all;
+            word-wrap: break-word;
+            display: inline-block;
+            padding: 5px 0px 5px 5px;
+        }
+
+  
+
+        .user{
+            margin-top: 15px;
+            text-align: right;
+        }
+        .user p{
+            
+            border-radius: 8px;
+            margin-right: 10px;
+            max-width: 210px;
+            line-height: 20px;
+            word-break: break-all;
+            word-wrap: break-word;
+            display: inline-block;
+            padding: 5px;
+            background-color:yellowgreen; 
+        }
+    </style>
+</head>
+<body>
+    <div class="chatBox">
+
+        <!-- 聊天记录区域 -->
+        <ul class="container">
+            <li class="robot">
+                    <span class="chat-icon"></span>
+                    <p class="text">我是小冰，大黑牛，快来聊天吧！</p>
+            </li>
+
+            <!-- <li class="user">
+                <p>你好！</p>
+            </li> -->
+        </ul>
+
+        <!-- 输入文字区域 -->
+        <div class="sendBox">
+            <input type="text" id="msg">
+            <input type="button" value="发送" id="send">
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+  
+    /*
+      首先要拿到发送按钮，给它加一个点击事件
+            拿到用户输入的内容（id为msg的文本框）
+            还要做一个li标签，把用户输入的内容，显示到界面上
+            拿到内容后，把内容提交到服务器，服务器会返回结果（机器人回的话），拿到结果，创建出li标签显示在界面上
+    */
+
+    //找到输入消息的文本框
+    var msg = document.getElementById('msg');
+    //找到ul
+    var container = document.getElementsByClassName('container')[0];
+    
+    //发送按钮的点击事件
+    document.getElementById('send').onclick = function(){
+
+        //拿到用户输入的内容 msg.value
+        //准备一个li标签
+        var userLi = document.createElement('li');
+        //设置样式类
+        userLi.className = "user";
+        //加li标签的内容
+        userLi.innerHTML = "<p>"+ msg.value +"</p>";
+        //显示在聊天面板
+        container.appendChild(userLi);
+
+        //创建请求对象
+        var xhr = new XMLHttpRequest();
+        //设置请求行
+        xhr.open('post','http://www.tuling123.com/openapi/api');
+        //设置请求头（因为是POST请求）
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        //发起请求（设置请求体）
+        xhr.send("key=b0d843b7c6e844e6bb5ed2391af4faf7&info=" + msg.value);
+
+        //获得响应体
+        xhr.onreadystatechange = function(){
+
+            if(xhr.readyState == 4 && xhr.status == 200){
+                
+                //转换JSON格式字符串
+                var result = JSON.parse(xhr.responseText);
+                //result.text 是机器人回复的内容，加到li标签
+                var robotLi = document.createElement('li');
+                robotLi.className = "robot";
+                robotLi.innerHTML = '<span class="chat-icon"></span><p class="text">' + result.text + '</p>';
+                
+                //加到聊天面板
+                container.appendChild(robotLi);
+            }
+        }
+
+        //清空文本框输入的内容
+        msg.value = ""; 
+    }
+
+</script>

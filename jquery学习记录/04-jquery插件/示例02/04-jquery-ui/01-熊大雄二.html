@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- 2. 引入样式 -->
+  <link rel="stylesheet" href="jquery-ui.css">
+</head>
+<body>
+
+<!-- 1. 结构 -->
+<!-- Accordion -->
+<h2 class="demoHeaders">Accordion</h2>
+<div id="accordion">
+  <h3>First</h3>
+  <div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+  <h3>Second</h3>
+  <div>Phasellus mattis tincidunt nibh.</div>
+  <h3>Third</h3>
+  <div>Nam dui erat, auctor a, dignissim quis.</div>
+</div>
+
+<!-- 3. 引入 jquery 和 jquery.ui.js -->
+<script src="jquery-1.12.4.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- 4. 使用插件 -->
+<script>
+  // 初始化手风琴
+  $( "#accordion" ).accordion();
+</script>
+
+</body>
+</html>

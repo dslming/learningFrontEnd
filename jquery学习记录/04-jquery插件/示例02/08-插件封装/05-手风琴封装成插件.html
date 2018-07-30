@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    div {
+      width: 1200px;
+      height: 400px;
+      border: 2px solid #000;
+      margin: 100px auto;
+    }
+    
+    ul {
+      width: 1300px;
+    }
+    
+    li {
+      width: 240px;
+      height: 400px;
+      float: left;
+    }
+  
+  </style>
+</head>
+<body>
+<div id="box">
+  
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function () {
+
+    
+    $.fn.accordion = function( colors, minWidth ) {
+      colors = colors || [];
+      minWidth = minWidth || 10;
+      
+      
+      var $lis = this.find('li');
+      
+      // 每个盒子的平均宽度
+      var avgWidth = this.width() / $lis.length;
+      var maxWidth = this.width() - minWidth * ( $lis.length - 1 );
+  
+      $lis.each(function(index, element) {
+        $(this).css('backgroundColor', colors[index] );
+      });
+  
+      // 实现功能
+      // 让当前li变大到 maxWidth, 其他li变小到 minWidth
+      $lis.mouseenter(function() {
+        $(this).stop().animate({width: maxWidth})
+          .siblings().stop().animate({width:minWidth});
+      })
+  
+      // 移出去, 所有 的li 恢复 avgWidth
+      this.mouseleave(function() {
+        $lis.stop().animate({width: avgWidth});
+      })
+    }
+  
+    // 有颜色
+    var colors = [ 'red', 'blue', 'yellow', 'green', 'pink' ];
+    $('#box').accordion( colors, 10 );
+    
+    
+  
+  });
+</script>
+
+</body>
+</html>

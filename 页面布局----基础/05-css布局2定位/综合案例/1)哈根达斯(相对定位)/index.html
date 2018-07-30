@@ -1,0 +1,53 @@
+<!-- 
+日期：2018/3/13
+目的：实现阿根达斯图片插入两个小图片。
+思路：将两个小图片(今日新品)以绝对定位设置。
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.main {
+			width: 310px;
+			height: 190px;
+			background-color: red;
+			margin: 100px auto;
+
+			/* 父盒子必须设置相对位置,子盒子才能起作用 */
+			position: relative;
+		}
+
+		/* 设置为绝对定位 */
+		.top,
+		.bottom {
+			position: absolute;
+		}
+
+		/* 设置位置 */
+		.top {
+			top: 0px;
+			left: 0px;
+		}
+
+		.bottom {
+			bottom: 0px;
+			right: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<!-- 图片以内容插入 -->
+		<img src="images/adv.jpg" alt="">
+
+		<!-- 插入两个小装饰 -->
+		<img src="images/br.gif" alt="" class="bottom">
+		<img src="images/top_tu.gif" alt="" class="top">
+
+	</div>
+</body>
+</html>

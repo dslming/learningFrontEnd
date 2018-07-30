@@ -1,0 +1,30 @@
+
+/* 
+
+ 独立组件
+
+ */
+
+body .layui-tab-content{padding: 0;}
+.layui-tab-content .layui-form{margin: 15px 0 30px;}
+
+body .layui-form-label{width: 100px;}
+body .layui-inline{margin: 0 10px 20px 0;}
+body .layui-inline:last-child{margin-right: 0;}
+@media screen and (max-width: 450px){
+  body .layui-form-item .layui-input-inline{margin-left: 130px;}
+}
+ 
+.alone-banner{height: 190px; text-align: center; font-weight: 300; background-color: #009688; color:#fff;}
+.alone-banner h1{padding-top: 60px; line-height: 32px; font-size: 30px; font-weight: 300;}
+.alone-banner p{padding-top: 20px; color: #e2e2e2; color: rgba(255,255,255,.8);}
+
+.alone-nav .layui-tab-title li{margin-right: 30px; padding: 0; color: #666;}
+.alone-nav .layui-tab-title li a{  padding: 0 20px;}
+
+.alone-download{margin: 30px 0;}
+.alone-download .layui-btn{margin-right: 10px;}
+.alone-download span{display: inline-block; line-height: 44px; padding-right: 20px;}
+.alone-download span em{color: #999;}
+
+.alone-title{margin-top: 20px;}
