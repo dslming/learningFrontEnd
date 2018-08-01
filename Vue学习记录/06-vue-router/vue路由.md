@@ -67,7 +67,16 @@ this.$router.push("/add");
 如果要动态给元素绑定类名，可以用js，但是太麻烦了，所以可以直接使用vue-router中的一个新标签。
 -  为了能够动态将active属性加到元素上，我们可以使用router-link中的一个属性：actvie-class:
 -  actvie-class：被激活时会添加的类名
+-  tag:指定该连接被渲染的标签。
 
+
+```js
+ <router-link  tag="li" v-for="item in hotcity" :to="'/city/' + item.id" :key="item.id">
+                    {{item.name}}
+ </router-link>  
+```
+
+router-link的底层不是a标签，而是通过clike事件完成跳转。
 
 
 ### 二、缓存部分组件
