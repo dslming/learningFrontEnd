@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //用法1-数组
+        let values=[1,2,4];
+        let some=[...values,8];//[1,2,4,8]
+        // console.log(some);   
+        
+        //用法2-函数中使用数组形式
+        var state = [1,2];
+        function f(num1,num2){
+            console.log(num1);
+        }
+        f(...state);
+    </script>
+</body>
+</html>

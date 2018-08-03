@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Redux basic example</title>
+
+    <script src="redux.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div>
+
+      <p>
+
+        Clicked1: <span id="value">0</span> times
+		<button id="increment">+</button>
+        <button id="decrement">-</button>
+		
+		<br><br><br>
+		Clicked2: <span id="value2">0</span> times
+        <button id="increment2">+</button>
+        <button id="decrement2">-</button>
+      
+
+      </p>
+
+    </div>
+
+    <script>
+
+      function counter(state, action) {
+
+        if (typeof state === 'undefined') {
+
+          return 0
+
+        }
+
+        switch (action.type) {
+
+          case 'INCREMENT':
+
+            return state + 1
+
+          case 'DECREMENT':
+
+            return state - 1
+
+          default:
+
+            return state
+
+        }
+
+      }
+
+
+
+      var store = Redux.createStore(counter,0)
+	  var store2 = Redux.createStore(counter,5)
+
+      var valueEl = document.getElementById('value')
+	  var valueEl2 = document.getElementById('value2')
+
+
+
+      function render() {
+        valueEl.innerHTML = store.getState().toString()
+      }
+	  
+	  function render2() {
+        valueEl2.innerHTML = store.getState().toString()
+      }
+
+
+
+      render()
+	  render2();
+
+      store.subscribe(render)
+	  store2.subscribe(render2)
+
+
+
+      document.getElementById('increment')
+
+        .addEventListener('click', function () {
+
+          store.dispatch({ type: 'INCREMENT' })
+
+        })
+
+
+
+      document.getElementById('decrement')
+
+        .addEventListener('click', function () {
+
+          store.dispatch({ type: 'DECREMENT' })
+
+        })
+		
+		//---------------------------------2------------
+		      document.getElementById('increment2')
+
+        .addEventListener('click', function () {
+
+          store2.dispatch({ type: 'INCREMENT' })
+
+        })
+
+
+
+      document.getElementById('decrement2')
+
+        .addEventListener('click', function () {
+
+          store2.dispatch({ type: 'DECREMENT' })
+
+        })
+
+    </script>
+
+  </body>
+
+</html>
