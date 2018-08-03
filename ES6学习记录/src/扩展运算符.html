@@ -10,16 +10,13 @@
 
 <body>
     <script>
-       var obj1 = {name:"obj1"}
+       var arr1 = [1,2,3];
+       var arr2 = [... arr1];
 
-       function sayName(){
-           
-           console.log(this.name);
-       }
+       console.log(arr2);
 
-       // 将this指向由winddows改为 对象 obj1
-       var obj1Fun = sayName.bind(obj1);
-       obj1Fun();// obj1
+
+
 
     </script>
 </body>
