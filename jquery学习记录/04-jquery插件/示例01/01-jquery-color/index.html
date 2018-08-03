@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    div {
+      background-color: #bada55;
+      width: 100px;
+      border: 1px solid green;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="jquery.color.js"></script>
+</head>
+<body>
+<button id="go">Simple</button>
+<button id="sat">Desaturate</button>
+<div id="block">Hello!</div>
+<script>
+  jQuery("#go").click(function(){
+    jQuery("#block").animate({
+      backgroundColor: "#abcdef"
+    }, 1500 );
+  });
+//  jQuery("#sat").click(function(){
+//    jQuery("#block").animate({
+//      backgroundColor: jQuery.Color([ 255, 0, 0, 1 ])
+//    }, 1500 );
+//  });
+</script>
+</body>
+</html>

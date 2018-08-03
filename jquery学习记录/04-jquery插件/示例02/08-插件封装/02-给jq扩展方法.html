@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div>123</div>
+<div>123</div>
+<div>123</div>
+
+<span>123</span>
+<span>123</span>
+<span>123</span>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function () {
+    
+    // 给 jquery 扩展了方法
+    $.prototype.alert = function() {
+      alert( '他敢勾引我' )
+    };
+    
+    // jQuery.fn = jQuery.prototype
+    // fn 就是 prototype 别名
+    console.log( $.fn === $.prototype )
+    $.fn.sayHello = function() {
+      alert( '哈哈哈' )
+    };
+    // extend 也可以给 jQuery 扩展方法
+    
+    $('div').sayHello();
+    
+    $('span').sayHello();
+    
+  });
+</script>
+
+
+</body>
+</html>

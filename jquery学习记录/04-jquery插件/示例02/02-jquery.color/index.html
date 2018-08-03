@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  box
+</div>
+
+<!-- 1. 引入 jquery -->
+<script src="jquery-1.12.4.js"></script>
+<!-- 2. 引入 插件 -->
+<script src="jquery.color.js"></script>
+
+<script>
+  
+  // 引入 jquery.color.js 就能让 animate 强化功能
+  // 可以实现颜色渐变
+  $(function () {
+    $('div').animate({
+      width: 400,
+      height: 400,
+      backgroundColor: 'blue'
+    }, 2000)
+  });
+  
+  
+</script>
+
+</body>
+</html>

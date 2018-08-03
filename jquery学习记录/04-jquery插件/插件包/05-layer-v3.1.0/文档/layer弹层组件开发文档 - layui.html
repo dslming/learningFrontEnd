@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.layui.com/doc/modules/layer.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>layer弹层组件开发文档 - layui</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="./layer弹层组件开发文档 - layui_files/layui.css" media="all">
+<link rel="stylesheet" href="./layer弹层组件开发文档 - layui_files/global.css" media="all">
+<script src="./layer弹层组件开发文档 - layui_files/ca-pub-6111334333458862.js.下载"></script><script type="text/javascript" async="" charset="utf-8" src="./layer弹层组件开发文档 - layui_files/core.php"></script><link id="layuicss-layer" rel="stylesheet" href="./layer弹层组件开发文档 - layui_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./layer弹层组件开发文档 - layui_files/code.css" media="all"><link rel="prefetch" href="https://securepubads.g.doubleclick.net/static/3p_cookie.html"></head>
+<body>
+<div class="layui-header header header-doc">
+<div class="layui-main">
+<a class="logo" href="http://www.layui.com/">
+<img src="./layer弹层组件开发文档 - layui_files/logo.png" alt="layui">
+</a>
+<div class="layui-form component">
+<select lay-search="" lay-filter="component">
+<option value="">搜索组件或模块</option>
+<option value="element/layout.html">grid 栅格布局</option>
+<option value="element/layout.html#admin">admin 后台布局</option>
+<option value="element/color.html">color 颜色</option>
+<option value="element/icon.html">iconfont 字体图标</option>
+<option value="element/anim.html">animation 动画</option>
+<option value="element/button.html">button 按钮</option>
+<option value="element/form.html">form 表单组</option>
+<option value="element/form.html#input">input 输入框</option>
+<option value="element/form.html#select">select 下拉选择框</option>
+<option value="element/form.html#checkbox">checkbox 复选框</option>
+<option value="element/form.html#switch">switch 开关</option>
+<option value="element/form.html#radio">radio 单选框</option>
+<option value="element/form.html#textarea">textarea 文本域</option>
+<option value="element/nav.html">nav 导航菜单</option>
+<option value="element/nav.html#breadcrumb">breadcrumb 面包屑</option>
+<option value="element/tab.html">tabs 选项卡</option>
+<option value="element/progress.html">progress 进度条</option>
+<option value="element/collapse.html">collapse 折叠面板/手风琴</option>
+<option value="element/table.html">table 表格元素</option>
+<option value="element/badge.html">badge 徽章</option>
+<option value="element/timeline.html">timeline 时间线</option>
+<option value="element/auxiliar.html#blockquote">blockquote 引用块</option>
+<option value="element/auxiliar.html#fieldset">fieldset 字段集</option>
+<option value="element/auxiliar.html#hr">hr 分割线</option>
+<option value="modules/layer.html">layer 弹出层/弹窗综合</option>
+<option value="modules/laydate.html">laydate 日期时间选择器</option>
+<option value="modules/layim.html">layim 即时通讯/聊天</option>
+<option value="modules/laypage.html">laypage 分页</option>
+<option value="modules/laytpl.html">laytpl 模板引擎</option>
+<option value="modules/form.html">form 表单模块</option>
+<option value="modules/table.html">table 数据表格</option>
+<option value="modules/upload.html">upload 文件/图片上传</option>
+<option value="modules/element.html">element 常用元素操作</option>
+<option value="modules/carousel.html">carousel 轮播/跑马灯</option>
+<option value="modules/layedit.html">layedit 富文本编辑器</option>
+<option value="modules/tree.html">tree 树形菜单</option>
+<option value="modules/flow.html">flow 信息流/图片懒加载</option>
+<option value="modules/util.html">util 工具集</option>
+<option value="modules/code.html">code 代码修饰</option>
+</select><div class="layui-form-select"><div class="layui-select-title"><input type="text" placeholder="搜索组件或模块" value="" class="layui-input"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">搜索组件或模块</dd><dd lay-value="element/layout.html" class="">grid 栅格布局</dd><dd lay-value="element/layout.html#admin" class="">admin 后台布局</dd><dd lay-value="element/color.html" class="">color 颜色</dd><dd lay-value="element/icon.html" class="">iconfont 字体图标</dd><dd lay-value="element/anim.html" class="">animation 动画</dd><dd lay-value="element/button.html" class="">button 按钮</dd><dd lay-value="element/form.html" class="">form 表单组</dd><dd lay-value="element/form.html#input" class="">input 输入框</dd><dd lay-value="element/form.html#select" class="">select 下拉选择框</dd><dd lay-value="element/form.html#checkbox" class="">checkbox 复选框</dd><dd lay-value="element/form.html#switch" class="">switch 开关</dd><dd lay-value="element/form.html#radio" class="">radio 单选框</dd><dd lay-value="element/form.html#textarea" class="">textarea 文本域</dd><dd lay-value="element/nav.html" class="">nav 导航菜单</dd><dd lay-value="element/nav.html#breadcrumb" class="">breadcrumb 面包屑</dd><dd lay-value="element/tab.html" class="">tabs 选项卡</dd><dd lay-value="element/progress.html" class="">progress 进度条</dd><dd lay-value="element/collapse.html" class="">collapse 折叠面板/手风琴</dd><dd lay-value="element/table.html" class="">table 表格元素</dd><dd lay-value="element/badge.html" class="">badge 徽章</dd><dd lay-value="element/timeline.html" class="">timeline 时间线</dd><dd lay-value="element/auxiliar.html#blockquote" class="">blockquote 引用块</dd><dd lay-value="element/auxiliar.html#fieldset" class="">fieldset 字段集</dd><dd lay-value="element/auxiliar.html#hr" class="">hr 分割线</dd><dd lay-value="modules/layer.html" class="">layer 弹出层/弹窗综合</dd><dd lay-value="modules/laydate.html" class="">laydate 日期时间选择器</dd><dd lay-value="modules/layim.html" class="">layim 即时通讯/聊天</dd><dd lay-value="modules/laypage.html" class="">laypage 分页</dd><dd lay-value="modules/laytpl.html" class="">laytpl 模板引擎</dd><dd lay-value="modules/form.html" class="">form 表单模块</dd><dd lay-value="modules/table.html" class="">table 数据表格</dd><dd lay-value="modules/upload.html" class="">upload 文件/图片上传</dd><dd lay-value="modules/element.html" class="">element 常用元素操作</dd><dd lay-value="modules/carousel.html" class="">carousel 轮播/跑马灯</dd><dd lay-value="modules/layedit.html" class="">layedit 富文本编辑器</dd><dd lay-value="modules/tree.html" class="">tree 树形菜单</dd><dd lay-value="modules/flow.html" class="">flow 信息流/图片懒加载</dd><dd lay-value="modules/util.html" class="">util 工具集</dd><dd lay-value="modules/code.html" class="">code 代码修饰</dd></dl></div>
+</div>
+<ul class="layui-nav" pc="">
+<li class="layui-nav-item layui-this">
+<a href="http://www.layui.com/doc/">文档</a>
+</li>
+<li class="layui-nav-item ">
+<a href="http://www.layui.com/demo/">示例<span class="layui-badge-dot"></span></a>
+</li>
+<li class="layui-nav-item" pc="">
+<a href="http://fly.layui.com/" target="_blank">社区</a>
+</li>
+<li class="layui-nav-item" pc="">
+<a href="javascript:;">周边<span class="layui-nav-more"></span></a>
+<dl class="layui-nav-child">
+<dd><a href="http://layim.layui.com/" target="_blank">即时聊天</a></dd>
+<dd><a href="http://www.layui.com/alone.html" target="_blank">独立组件</a></dd>
+<dd><a href="http://fly.layui.com/jie/8157/" target="_blank">社区模板</a></dd>
+<dd><a href="http://fly.layui.com/jie/9842/" target="_blank">Axure组件</a></dd>
+</dl>
+</li>
+<li class="layui-nav-item" pc="">
+<a href="http://www.layui.com/v1/" target="_blank">旧版</a>
+</li>
+<li class="layui-nav-item" mobile="">
+<a href="javascript:;">更多<span class="layui-nav-more"></span></a>
+<dl class="layui-nav-child">
+<dd><a href="http://fly.layui.com/" target="_blank">社区</a></dd>
+</dl>
+</li>
+<span class="layui-nav-bar" style="left: 452px; top: 55px;"></span></ul>
+</div>
+</div>
+<ul class="site-dir" style="display: none;">
+<li><a href="http://www.layui.com/doc/modules/layer.html#use"><cite>使用场景</cite></a></li>
+<li id="L_layerDebug" style=""><a href="javascript:;" style="color: #01AAED;"><cite>在线调试</cite></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#base"><cite>基础参数</cite></a></li>
+<ul style="margin-left: 15px;">
+<li><a href="http://www.layui.com/doc/modules/layer.html#type">type<em>层类型</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#title">title<em>标题</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#content">content<em>内容</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#skin">skin<em>皮肤</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#area">area<em>宽高</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#offset">offset<em>坐标</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#icon">icon<em>提示图标</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#btn">btn<em>提示按钮</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#btnAlign">btnAlign<em>按钮排列</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#closeBtn">closeBtn<em>右上关闭</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#shade">shade<em>遮罩</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#shadeClose">shadeClose</a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#time">time<em>自动关闭</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#id">id<em>唯一id</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#anim">anim<em>动画</em></a> </li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#isOutAnim">isOutAnim<em>关闭动画</em></a> </li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#maxmin">maxmin<em>最大小化</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#fixed">fixed<em>是否固定</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#resize">resize<em>是否允许拉伸</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#resizing">resizing<em>正在拉伸</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#scrollbar">scrollbar<em>屏蔽滚动</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#maxWidth">maxWidth<em>最大宽</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#maxHeight">maxHeight<em>最大高</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#zIndex">zIndex<em>层叠值</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#move">move<em>拖拽元素</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#moveOut">moveOut<em>拖出</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#moveEnd">moveEnd<em>回调</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#tips">tips<i>Tips参数</i></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#tipsMore">tipsMore<em>允许多tips</em></a> </li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#success">success<em>弹出后回调</em></a> </li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#yes">yes<em>确定回调</em></a> </li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#cancel">cancel<em>关闭回调</em></a> </li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#end">end<em>销毁后回调</em></a> </li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#full">full/min/restore</a> </li>
+</ul>
+<li>内置方法</li>
+<ul style="margin-left: 15px;">
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.config">config<em>全局设置</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.ready">ready<em>就绪</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.open">open<em>核心方法</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.alert">alert<em>弹框</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.confirm">confirm<em>询问</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.msg">msg<em>提示</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.load">load<em>加载</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.tips">tips<em>吸附</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.close">close<em>关闭层</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.closeAll">closeAll<em>关闭全部</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.style">style</a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.title">title<em>重置标题</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.getChildFrame">getChildFrame</a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.getFrameIndex">getFrameIndex</a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.iframeAuto">iframeAuto</a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.iframeSrc">iframeSrc</a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.setTop">setTop<em>多层置顶</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.full">full/min/restore</a></li>
+</ul>
+<li>其他内置层</li>
+<ul style="margin-left: 15px;">
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.prompt">prompt<em>输入层</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.tab">tab<em>选项卡层</em></a></li>
+<li><a href="http://www.layui.com/doc/modules/layer.html#layer.photos">photos<em>图片层</em></a></li>
+</ul>
+</ul>
+<div class="layui-main site-inline">
+<div class="site-tree">
+<div class="layui-form" style="height: 38px; margin: 10px 13px 0 0;">
+<select lay-filter="tabVersion">
+<option value="new">2.x</option>
+<option value="v1">1.0.9</option>
+</select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="2.x" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="new" class="layui-this">2.x</dd><dd lay-value="v1" class="">1.0.9</dd></dl></div>
+</div>
+<ul class="layui-tree">
+<li><h2>基础说明</h2></li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/">
+<cite>开始使用</cite>
+<em>Getting Started</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/base/infrastructure.html">
+<cite>底层方法</cite>
+<em>基础支撑</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/base/element.html">
+<cite>页面元素</cite>
+<em>规范 / 公共类 / 属性</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/base/modules.html">
+<cite>模块规范</cite>
+<em>使用 / 扩展</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/base/faq.html">
+<cite>常见问题</cite>
+<em>FAQ</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/base/changelog.html">
+<cite>更新日志</cite>
+<span class="layui-badge-dot" style="position: relative; top: -3px; left: -3px;"></span>
+</a>
+</li>
+<li><h2>页面元素</h2></li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/layout.html">
+<cite>布局</cite>
+<em>栅格 / 后台布局</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/color.html">
+<cite>颜色</cite>
+<em>主题色设计感 / 内置背景色</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/icon.html">
+<cite>图标</cite>
+<em>字体图标</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/anim.html">
+<cite>动画</cite>
+<em>内置的CSS3动画类</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/button.html">
+<cite>按钮</cite>
+<em>button组</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/form.html">
+<cite>表单</cite>
+<em>form元素集合</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/nav.html">
+<cite>导航</cite>
+<em>菜单 / 面包屑</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/tab.html">
+<cite>选项卡</cite>
+<em>Tabs 切换</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/progress.html">
+<cite>进度条</cite>
+<em>progress</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/collapse.html">
+<cite>面板</cite>
+<em>折叠面板 / 手风琴</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/table.html">
+<cite>表格</cite>
+<em>静态table</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/badge.html">
+<cite>徽章</cite>
+<em>小圆点 / 小边框</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/timeline.html">
+<cite>时间线</cite>
+<em>timeline</em>
+</a>
+</li>
+<li class="site-tree-noicon ">
+<a href="http://www.layui.com/doc/element/auxiliar.html">
+<cite>辅助</cite>
+<em>引用 / 字段集 / 横线等</em>
+</a>
+</li>
+<li><h2>内置模块</h2></li>
+<li class="layui-this">
+<a href="http://www.layui.com/doc/modules/layer.html">
+<i class="layui-icon" style="top: 3px;"></i><cite>弹出层</cite>
+<em>layer</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/laydate.html">
+<i class="layui-icon" style="top: 1px;"></i><cite>日期与时间选择</cite>
+<em>laydate</em>
+</a>
+</li>
+<li>
+<a href="http://www.layui.com/doc/modules/layim.html">
+<i class="layui-icon" style="position: relative; top: 3px;"></i>
+<cite>即时通讯</cite>
+<em>layim</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/laypage.html">
+<i class="layui-icon"></i><cite>分页</cite>
+<em>laypage</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/laytpl.html">
+<i class="layui-icon"></i><cite>模板引擎</cite>
+<em>laytpl</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/table.html">
+<i class="layui-icon"></i>
+<cite>数据表格</cite>
+<em>table</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/form.html">
+<i class="layui-icon" style="top: 2px;"></i>
+<cite>表单</cite>
+<em>form</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/upload.html">
+<i class="layui-icon"></i>
+<cite>文件上传</cite>
+<em>upload</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/element.html">
+<i class="layui-icon" style="top: 1px; font-size: 18px;"></i>
+<cite>常用元素操作</cite>
+<em>element</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/carousel.html">
+<i class="layui-icon"></i>
+<cite>轮播</cite>
+<em>carousel</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/flow.html">
+<i class="layui-icon"></i>
+<cite>流加载</cite>
+<em>flow</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/util.html">
+<i class="layui-icon"></i>
+<cite>工具集</cite>
+<em>util</em>
+</a>
+</li>
+<li class="">
+<a href="http://www.layui.com/doc/modules/code.html">
+<i class="layui-icon" style="top: 1px;"></i>
+<cite>代码修饰器</cite>
+<em>code</em>
+</a>
+</li>
+</ul>
+</div>
+<div class="site-content">
+<h1 class="site-h1"><i class="layui-icon" style="position: relative; top: 9px;"></i>弹层组件文档 - layui.layer</h1>
+<blockquote class="layui-elem-quote site-text">
+layer 至今仍作为 layui 的代表作，她的受众广泛并非偶然，而是这数年来的坚持、不弃的执念，将那些不屑的眼光转化为应得的尊重，不断完善和维护、不断建设和提升社区服务，在 Web 开发者的圈子里口口相传，乃至于成为今天的 layui 最强劲的源动力。目前，<em>layer已成为国内最多人使用的 Web 弹层组件</em>，<a href="https://github.com/sentsin/layer" target="_blank">GitHub</a> 自然Stars<em>5000+</em>，官网累计下载量达50w+，大概有30万不同规模的 Web 平台使用过 layer。
+<br><br>之所以列举上面这些数字，并非是在夸夸其谈，而是懂 layer 的人都知道，这是一种怎样不易的沉淀。而由于 layer 在 layui 体系中的位置比较特殊，甚至让很多人都误以为 layui = layer ui，所以再次强调 layer 只是作为 layui 的一个弹层模块，由于其用户基数较大，所以至今仍把她作为独立组件来维护。不过请注意：无论是独立的 layer，还是作为内置模块的 layer，文档都以本页为准。
+</blockquote>
+<blockquote class="layui-elem-quote site-text">
+模块加载名称：<em>layer</em>，独立版本：<a href="http://layer.layui.com/" target="_blank">layer.layui.com</a>
+</blockquote>
+<div style="margin: 15px 0; text-align: center; background-color: #F2F2F2;">
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="9841027833" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;" src="./layer弹层组件开发文档 - layui_files/saved_resource.html"></iframe></ins></ins></ins>
+</div>
+<div class="site-title">
+<fieldset><legend><a name="use">使用场景</a></legend></fieldset>
+</div>
+<div class="site-text">
+<p>由于layer可以独立使用，也可以通过Layui模块化使用。所以请按照你的实际需求来选择。</p>
+<table class="layui-table">
+<thead>
+<tr>
+<th style="width: 150px;">场景</th>
+<th style="width: 450px;">用前准备</th>
+<th>调用方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 作为独立组件使用</td>
+<td>
+如果你只是单独想使用 layer，你可以去 <a href="http://layer.layui.com/" target="_blank">layer</a> 独立版本官网下载组件包。你需要在你的页面引入<em>jQuery</em>1.8以上的任意版本，并引入<em>layer.js</em>。
+</td>
+<td>
+通过script标签引入layer.js后，直接用即可。
+参考：<a href="http://layer.layui.com/hello.html" target="_blank">快速上手</a>
+</td>
+</tr>
+<tr>
+<td>2. layui 模块化使用</td>
+<td>
+如果你使用的是 layui，那么你直接在官网下载 layui 框架即可，无需引入 jQuery 和 layer.js，但需要引入<em>layui.css</em>和<em>layui.js</em>
+</td>
+<td>
+通过<em>layui.use('layer', callback)</em>加载模块
+</td>
+</tr>
+<tr>
+</tr></tbody>
+</table>
+<pre class="layui-code layui-box layui-code-view" lay-title="作为独立组件使用 layer"><h3 class="layui-code-h3">作为独立组件使用 layer<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>引入好layer.js后，直接用即可</li><li>&lt;script src="layer.js"&gt;&lt;/script&gt;</li><li>&lt;script&gt;</li><li>layer.msg('hello'); </li><li>&lt;/script&gt;</li><li>      </li></ol></pre>
+<pre class="layui-code layui-box layui-code-view" lay-title="在 layui 中使用 layer"><h3 class="layui-code-h3">在 layui 中使用 layer<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layui.use('layer', function(){</li><li>  var layer = layui.layer;</li><li>  </li><li>  layer.msg('hello');</li><li>});              </li><li>      </li></ol></pre>
+<p>除了上面有所不同，其它都完全一致。</p>
+</div>
+<div class="site-title">
+<fieldset><legend><a name="base">基础参数</a></legend></fieldset>
+</div>
+<div class="site-text">
+<p>我们提到的基础参数主要指调用方法时用到的配置项，如：<em>layer.open({content: ''})</em><em>layer.msg('', {time: 3})</em>等，其中的content和time即是基础参数，以键值形式存在，基础参数<em>可合理应用于任何层类型中</em>，您不需要所有都去配置，大多数都是可选的。而其中的layer.open、layer.msg就是内置方法。注意，从2.3开始，无需通过layer.config来加载拓展模块</p>
+</div>
+<dl>
+<div class="site-title"><fieldset><legend><a name="type">type</a> - 基本层类型</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Number，<span>默认</span>：0</p>
+<p>layer提供了5种层类型。可传入的值有：<em>0</em>（信息框，默认）<em>1</em>（页面层）<em>2</em>（iframe层）<em>3</em>（加载层）<em>4</em>（tips层）。
+若你采用<em>layer.open({type: 1})</em>方式调用，则type为必填项（信息框除外）</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="title">title</a> - 标题</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/Array/Boolean，<span>默认</span>：'信息'</p>
+<p>title支持三种类型的值，若你传入的是普通的字符串，如<em>title
+:'我是标题'</em>，那么只会改变标题文本；若你还需要自定义标题区域样式，那么你可以<em>title: ['文本', 'font-size:18px;']</em>，数组第二项可以写任意css样式；如果你不想显示标题栏，你可以<em>title: false</em></p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="content">content</a> - 内容</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/DOM/Array，<span>默认</span>：''</p>
+<p>content可传入的值是灵活多变的，不仅可以传入普通的html内容，还可以指定DOM，更可以随着type的不同而不同。譬如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>/!*</li><li> 如果是页面层</li><li> */</li><li>layer.open({</li><li>  type: 1, </li><li>  content: '传入任意的文本或html' //这里content是一个普通的String</li><li>});</li><li>layer.open({</li><li>  type: 1,</li><li>  content: $('#id') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响</li><li>});</li><li>//Ajax获取</li><li>$.post('url', {}, function(str){</li><li>  layer.open({</li><li>    type: 1,</li><li>    content: str //注意，如果str是object，那么需要字符拼接。</li><li>  });</li><li>});</li><li>/!*</li><li> 如果是iframe层</li><li> */</li><li>layer.open({</li><li>  type: 2, </li><li>  content: 'http://sentsin.com' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以<em>content: ['http://sentsin.com', 'no']</em></li><li>}); </li><li>/!*</li><li> 如果是用layer.open执行tips层</li><li> */</li><li>layer.open({</li><li>  type: 4,</li><li>  content: ['内容', '#id'] //数组第二项即吸附元素选择器或者DOM</li><li>});        </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="skin">skin</a> - 样式类名</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String，<span>默认</span>：''</p>
+<p>skin不仅允许你传入layer内置的样式class名，还可以传入您自定义的class名。这是一个很好的切入点，意味着你可以借助skin轻松完成不同的风格定制。目前layer内置的skin有：<em>layui-layer-lan</em><em>layui-layer-molv</em>，未来我们还会选择性地内置更多，但更推荐您自己来定义。以下是一个自定义风格的简单例子</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>        </li><li>//单个使用</li><li>layer.open({</li><li>  skin: 'demo-class'</li><li>});</li><li>//全局使用。即所有弹出层都默认采用，但是单个配置skin的优先级更高</li><li>layer.config({</li><li>  skin: 'demo-class'</li><li>})</li><li>//CSS </li><li>body .demo-class .layui-layer-title{background:#c00; color:#fff; border: none;}</li><li>body .demo-class .layui-layer-btn{border-top:1px solid #E9E7E7}</li><li>body .demo-class .layui-layer-btn a{background:#333;}</li><li>body .demo-class .layui-layer-btn .layui-layer-btn1{background:#999;}</li><li>…</li><li>加上body是为了保证优先级。你可以借助Chrome调试工具，定义更多样式控制层更多的区域。    </li><li>        </li></ol></pre>
+<p>你也可以<a class="layer-btn" href="http://layer.layui.com/skin.html#publish" target="_blank">去查看layer皮肤制作说明</a> </p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="area">area</a> - 宽高</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/Array，<span>默认</span>：'auto'</p>
+<p>在默认状态下，layer是宽高都自适应的，但当你只想定义宽度时，你可以<em>area: '500px'</em>，高度仍然是自适应的。当你宽高都要定义时，你可以<em>area: ['500px', '300px']</em></p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="offset">offset</a> - 坐标</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/Array，<span>默认</span>：垂直水平居中</p>
+<p>offset默认情况下不用设置。但如果你不想垂直水平居中，你还可以进行以下赋值：</p>
+<table class="layui-table">
+<thead>
+<tr>
+<th>值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>offset: '100px'</td>
+<td>只定义top坐标，水平保持居中</td>
+</tr>
+<tr>
+<td>offset: ['100px', '50px']</td>
+<td>同时定义top、left坐标</td>
+</tr>
+<tr>
+<td>offset: 't'</td>
+<td>快捷设置顶部坐标</td>
+</tr>
+<tr>
+<td>offset: 'r'</td>
+<td>快捷设置右边缘坐标</td>
+</tr>
+<tr>
+<td>offset: 'b'</td>
+<td>快捷设置底部坐标</td>
+</tr>
+<tr>
+<td>offset: 'l'</td>
+<td>快捷设置左边缘坐标</td>
+</tr>
+<tr>
+<td>offset: 'lt'</td>
+<td>快捷设置左上角</td>
+</tr>
+<tr>
+<td>offset: 'lb'</td>
+<td>快捷设置左下角</td>
+</tr>
+<tr>
+<td>offset: 'rt'</td>
+<td>快捷设置右上角</td>
+</tr>
+<tr>
+<td>offset: 'rb'</td>
+<td>快捷设置右下角</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<div class="site-title"><fieldset><legend><a name="icon">icon</a> - 图标。信息框和加载层的私有参数</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Number，<span>默认</span>：-1（信息框）/0（加载层）</p>
+<p>信息框默认不显示图标。当你想显示图标时，默认皮肤可以传入<em>0-6</em>如果是加载层，可以传入<em>0-2</em>。如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//eg1</li><li>layer.alert('酷毙了', {icon: 1});</li><li>//eg2</li><li>layer.msg('不开心。。', {icon: 5});</li><li>//eg3</li><li>layer.load(1); //风格1的加载</li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="btn">btn</a> - 按钮</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/Array，<span>默认</span>：'确认'</p>
+<p>信息框模式时，btn默认是一个确认按钮，其它层类型则默认不显示，加载层和tips层则无效。当您只想自定义一个按钮时，你可以<em>btn: '我知道了'</em>，当你要定义两个按钮时，你可以<em>btn: ['yes', 'no']</em>。当然，你也可以定义更多按钮，比如：<em>btn: ['按钮1', '按钮2', '按钮3', …]</em>，按钮1的回调是yes，而从按钮2开始，则回调为btn2: function(){}，以此类推。如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//eg1       </li><li>layer.confirm('纳尼？', {</li><li>  btn: ['按钮一', '按钮二', '按钮三'] //可以无限个按钮</li><li>  ,btn3: function(index, layero){</li><li>    //按钮【按钮三】的回调</li><li>  }</li><li>}, function(index, layero){</li><li>  //按钮【按钮一】的回调</li><li>}, function(index){</li><li>  //按钮【按钮二】的回调</li><li>});</li><li> </li><li>//eg2</li><li>layer.open({</li><li>  content: 'test'</li><li>  ,btn: ['按钮一', '按钮二', '按钮三']</li><li>  ,yes: function(index, layero){</li><li>    //按钮【按钮一】的回调</li><li>  }</li><li>  ,btn2: function(index, layero){</li><li>    //按钮【按钮二】的回调</li><li>    </li><li>    //return false 开启该代码可禁止点击该按钮关闭</li><li>  }</li><li>  ,btn3: function(index, layero){</li><li>    //按钮【按钮三】的回调</li><li>    </li><li>    //return false 开启该代码可禁止点击该按钮关闭</li><li>  }</li><li>  ,cancel: function(){ </li><li>    //右上角关闭回调</li><li>    </li><li>    //return false 开启该代码可禁止点击该按钮关闭</li><li>  }</li><li>});</li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="btnAlign">btnAlign</a> - 按钮排列</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String，<span>默认</span>：r</p>
+<p>你可以快捷定义按钮的排列位置，btnAlign的默认值为r，即右对齐。该参数可支持的赋值如下：</p>
+<table class="layui-table">
+<thead>
+<tr>
+<th>值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>btnAlign: 'l'</td>
+<td>按钮左对齐</td>
+</tr>
+<tr>
+<td>btnAlign: 'c'</td>
+<td>按钮居中对齐</td>
+</tr>
+<tr>
+<td>btnAlign: 'r'</td>
+<td>按钮右对齐。默认值，不用设置</td>
+</tr>
+<tr>
+</tr></tbody>
+</table>
+</dd>
+<div class="site-title"><fieldset><legend><a name="closeBtn">closeBtn</a> - 关闭按钮</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/Boolean，<span>默认</span>：1</p>
+<p>layer提供了两种风格的关闭按钮，可通过配置<em>1</em>和<em>2</em>来展示，如果不显示，则<em>closeBtn: 0</em></p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="shade">shade</a> - 遮罩</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/Array/Boolean，<span>默认</span>：0.3</p>
+<p>即弹层外区域。默认是0.3透明度的黑色背景（'#000'）。如果你想定义别的颜色，可以<em>shade: [0.8, '#393D49']</em>；如果你不想显示遮罩，可以<em>shade: 0</em></p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="shadeClose">shadeClose</a> - 是否点击遮罩关闭</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：false</p>
+<p>如果你的shade是存在的，那么你可以设定shadeClose来控制点击弹层外区域关闭。</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="time">time</a> - 自动关闭所需毫秒</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Number，<span>默认</span>：0</p>
+<p>默认不会自动关闭。当你想自动关闭时，可以<em>time: 5000</em>，即代表5秒后自动关闭，注意单位是毫秒（1秒=1000毫秒）</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="id">id</a> - 用于控制弹层唯一标识</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String，<span>默认</span>：空字符</p>
+<p>设置该值后，不管是什么类型的层，都只允许同时弹出一个。一般用于页面层和iframe层模式</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="anim">anim</a> - 弹出动画</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Number，<span>默认</span>：0</p>
+<p>我们的出场动画全部采用CSS3。这意味着除了ie6-9，其它所有浏览器都是支持的。目前anim可支持的动画类型有<em>0-6</em> 如果不想显示动画，设置 anim: -1 即可。另外需要注意的是，3.0之前的版本用的是 <em>shift</em> 参数</p>
+</dd>
+<table class="layui-table">
+<thead>
+<tr>
+<th>值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anim: 0</td>
+<td>平滑放大。默认</td>
+</tr>
+<tr>
+<td>anim: 1</td>
+<td>从上掉落</td>
+</tr>
+<tr>
+<td>anim: 2</td>
+<td>从最底部往上滑入</td>
+</tr>
+<tr>
+<td>anim: 3</td>
+<td>从左滑入</td>
+</tr>
+<tr>
+<td>anim: 4</td>
+<td>从左翻滚</td>
+</tr>
+<tr>
+<td>anim: 5</td>
+<td>渐显</td>
+</tr>
+<tr>
+<td>anim: 6</td>
+<td>抖动</td>
+</tr>
+</tbody>
+</table>
+<div class="site-title"><fieldset><legend><a name="isOutAnim">isOutAnim</a> - 关闭动画 （layer 3.0.3新增）</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：true</p>
+<p>默认情况下，关闭层时会有一个过度动画。如果你不想开启，设置 isOutAnim: false 即可</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="maxmin">maxmin</a> - 最大最小化。</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：false</p>
+<p>该参数值对<em>type:1</em>和<em>type:2</em>有效。默认不显示最大小化按钮。需要显示配置<em>maxmin: true</em>即可</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="fixed">fixed</a> - 固定</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：true</p>
+<p>即鼠标滚动时，层是否固定在可视区域。如果不想，设置<em>fixed: false</em>即可</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="resize">resize</a> - 是否允许拉伸</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：true</p>
+<p>默认情况下，你可以在弹层右下角拖动来拉伸尺寸。如果对指定的弹层屏蔽该功能，设置 false即可。该参数对loading、tips层无效</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="resizing">resizing</a> - 监听窗口拉伸动作</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Function，<span>默认</span>：null</p>
+<p>当你拖拽弹层右下角对窗体进行尺寸调整时，如果你设定了该回调，则会执行。回调返回一个参数：当前层的DOM对象</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>resizing: function(layero){</li><li>  console.log(layero);</li><li>}   </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="scrollbar">scrollbar</a> - 是否允许浏览器出现滚动条</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：true</p>
+<p>默认允许浏览器滚动，如果设定<em>scrollbar: false</em>，则屏蔽</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="maxWidth">maxWidth</a> - 最大宽度</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Number，<span>默认</span>：360</p>
+<p>请注意：只有当<em>area: 'auto'</em>时，maxWidth的设定才有效。</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="maxHeight">maxHeight</a> - 最大高度</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Number，<span>默认</span>：无</p>
+<p>请注意：只有当高度自适应时，maxHeight的设定才有效。</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="zIndex">zIndex</a> - 层叠顺序</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：，<span>默认</span>：19891014（贤心生日 0.0）</p>
+<p>一般用于解决和其它组件的层叠冲突。</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="move">move</a> - 触发拖动的元素</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：String/DOM/Boolean，<span>默认</span>：'.layui-layer-title'</p>
+<p>默认是触发标题区域拖拽。如果你想单独定义，指向元素的选择器或者DOM即可。如<em>move: '.mine-move'</em>。你还配置设定<em>move: false</em>来禁止拖拽</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="moveOut">moveOut</a> - 是否允许拖拽到窗口外</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：false</p>
+<p>默认只能在窗口内拖拽，如果你想让拖到窗外，那么设定<em>moveOut: true</em>即可</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="moveEnd">moveEnd</a> - 拖动完毕后的回调方法</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Function，<span>默认</span>：null</p>
+<p>默认不会触发moveEnd，如果你需要，设定<em>moveEnd: function(layero){}</em>即可。其中layero为当前层的DOM对象</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="tips">tips</a> - tips方向和颜色</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Number/Array，<span>默认</span>：2</p>
+<p>tips层的私有参数。支持<em>上</em><em>右</em><em>下</em><em>左</em>四个方向，通过<em>1-4</em>进行方向设定。如<em>tips: 3</em>则表示在元素的下面出现。有时你还可能会定义一些颜色，可以设定<em>tips: [1, '#c00']</em></p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="tipsMore">tipsMore</a> - 是否允许多个tips</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Boolean，<span>默认</span>：false</p>
+<p>允许多个意味着不会销毁之前的tips层。通过<em>tipsMore: true</em>开启</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="success">success</a> - 层弹出后的成功回调方法</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Function，<span>默认</span>：null</p>
+<p>当你需要在层创建完毕时即执行一些语句，可以通过该回调。success会携带两个参数，分别是<em>当前层DOM</em><em>当前层索引</em>。如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.open({</li><li>  content: '测试回调',</li><li>  success: function(layero, index){</li><li>    console.log(layero, index);</li><li>  }</li><li>});        </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="yes">yes</a> - 确定按钮回调方法</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Function，<span>默认</span>：null</p>
+<p>该回调携带两个参数，分别为当前层索引、当前层DOM对象。如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.open({</li><li>  content: '测试回调',</li><li>  yes: function(index, layero){</li><li>    //do something</li><li>    layer.close(index); //如果设定了yes回调，需进行手工关闭</li><li>  }</li><li>});        </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="cancel">cancel</a> - 右上角关闭按钮触发的回调</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Function，<span>默认</span>：null</p>
+<p>该回调携带两个参数，分别为：当前层索引参数（index）、当前层的DOM对象（layero），默认会自动触发关闭。如果不想关闭，<em>return false</em>即可，如；</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>cancel: function(index, layero){ </li><li>  if(confirm('确定要关闭么')){ //只有当点击confirm框的确定时，该层才会关闭</li><li>    layer.close(index)</li><li>  }</li><li>  return false; </li><li>}    </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="end">end</a> - 层销毁后触发的回调</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Function，<span>默认</span>：null</p>
+<p>无论是确认还是取消，只要层被销毁了，end都会执行，不携带任何参数。</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="full">full/min/restore</a> -分别代表最大化、最小化、还原 后触发的回调</legend></fieldset></div>
+<dd class="site-text">
+<p><span>类型</span>：Function，<span>默认</span>：null</p>
+<p>携带一个参数，即当前层DOM</p>
+</dd>
+</dl>
+<dl>
+<div class="site-title"><fieldset><legend><a name="layer.config">layer.config(options)</a> - 初始化全局配置</legend></fieldset></div>
+<dd class="site-text">
+<p>这是一个可以重要也可以不重要的方法，重要的是，它的权利真的很大，尤其是在模块化加载layer时，你会发现你必须要用到它。它不仅可以配置一些诸如路径、加载的模块，甚至还可以决定整个弹层的默认参数。而说它不重要，是因为多数情况下，你会发现，你似乎不是那么十分需要它。但你真的需要认识一下这位伙计。</p>
+<p>如果您是采用<em>seajs</em>或者<em>requirejs</em>加载layer，你需要执行该方法来完成初始化的配置。比如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.config({</li><li>  path: '/res/layer/' //layer.js所在的目录，可以是绝对目录，也可以是相对目录</li><li>});</li><li>//这样的话，layer就会去加载一些它所需要的配件，比如css等。  </li><li>//当然，你即便不用seajs或者requirejs，也可以通过上述方式设定路径             </li><li>        </li></ol></pre>
+<p>如果你是采用&lt;script src="?a.js&amp;layer.js"&gt;这种合并的方式引入layer，那么您需要在script标签上加一个自定义属性merge="true"。如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>&lt;script src="?a.js&amp;layer.js" merge="true"&gt;</li><li>这样的话，layer就不会去自动去获取路径，但你需要通过以下方式来完成初始化的配置</li><li>layer.config({</li><li>  path: '/res/layer/' //layer.js所在的目录，可以是绝对目录，也可以是相对目录</li><li>});</li><li>        </li></ol></pre>
+<p>注意：<em><a>如果采用 layui 加载 layer，无需设置 path。所以前置工作都是自动完成。</a></em></p>
+<p>但layer.config的作用远不止上述这样。它还可以配置层<em>默认的基础参数</em>，如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.config({</li><li>  anim: 1, //默认动画风格</li><li>  skin: 'layui-layer-molv' //默认皮肤</li><li>  …</li><li>});</li><li>//除此之外，extend还允许你加载拓展的css皮肤，如：</li><li>layer.config({</li><li>  //如果是独立版的layer，则将myskin存放在./skin目录下</li><li>  //如果是layui中使用layer，则将myskin存放在./css/modules/layer目录下</li><li>  extend: 'myskin/style.css'</li><li>});</li><li>//具体的皮肤定制，可以参见：<a href="http://www.layui.com/doc/modules/layer.html#skin">skin参数说明</a>      </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.ready">layer.ready(callback)</a> - 初始化就绪</legend></fieldset></div>
+<dd class="site-text">
+<p>由于我们的layer内置了轻量级加载器，所以你根本不需要单独引入css等文件。但是加载总是需要过程的。当你在页面一打开就要执行弹层时，你最好是将弹层放入ready方法中，如：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//页面一打开就执行弹层</li><li>layer.ready(function(){</li><li>  layer.msg('很高兴一开场就见到你');</li><li>});      </li><li>        </li></ol></pre>
+<p style="padding:10px 0; color:#999">我是华丽的酱油：介绍完上面两位引导者，接下来我们真正的主角闪亮登场了。此处应有掌声 ^,^</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.open">layer.open(options)</a> - 原始核心方法</legend></fieldset></div>
+<dd class="site-text">
+<p>基本上是露脸率最高的方法，不管是使用哪种方式创建层，都是走<em>layer.open()</em>，创建任何类型的弹层都会返回一个当前层索引，上述的<em>options即是基础参数</em>，另外，该文档<em>统一采用options作为基础参数的标识</em>例子：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>var index = layer.open({</li><li>  content: 'test'</li><li>});</li><li>//拿到的index是一个重要的凭据，它是诸如layer.close(index)等方法的必传参数。       </li><li>        </li></ol></pre>
+<p style="color:#999">噢，请等等，上面这位主角的介绍篇幅怎么看怎么都觉得跟它的地位不符，作者在文档中只给了它如此可怜的一块地？？这是因为，它真的已经大众得不能再大众了，你真正需要了解的，是它的内部器官，即上面一大篇幅介绍的各种基础参数。 ←_←</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.alert">layer.alert(content, options, yes)</a> - 普通信息框</legend></fieldset></div>
+<dd class="site-text">
+<p>它的弹出似乎显得有些高调，一般用于对用户造成比较强烈的关注，类似系统alert，但却比alert更灵便。它的参数是自动向左补齐的。通过第二个参数，可以设定各种你所需要的基础参数，但如果你不需要的话，直接写回调即可。如</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//eg1</li><li>layer.alert('只想简单的提示');        </li><li>//eg2</li><li>layer.alert('加了个图标', {icon: 1}); //这时如果你也还想执行yes回调，可以放在第三个参数中。</li><li>//eg3</li><li>layer.alert('有了回调', function(index){</li><li>  //do something</li><li>  </li><li>  layer.close(index);</li><li>});       </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.confirm">layer.confirm(content, options, yes, cancel)</a> - 询问框</legend></fieldset></div>
+<dd class="site-text">
+<p>类似系统confirm，但却远胜confirm，另外它<em>不是和系统的confirm一样阻塞</em>你需要把交互的语句放在回调体中。同样的，它的参数也是自动补齐的。</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//eg1</li><li>layer.confirm('is not?', {icon: 3, title:'提示'}, function(index){</li><li>  //do something</li><li>  </li><li>  layer.close(index);</li><li>});</li><li>//eg2</li><li>layer.confirm('is not?', function(index){</li><li>  //do something</li><li>  </li><li>  layer.close(index);</li><li>});       </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.msg">layer.msg(content, options, end)</a> - 提示框</legend></fieldset></div>
+<dd class="site-text">
+<p>我们在源码中用了相对较大的篇幅来定制了这个msg，目的是想将其打造成露脸率最高的提示框。而事实上我的确也在大量地使用它。因为它简单，而且足够得自觉，它不仅占据很少的面积，而且默认还会3秒后<em>自动消失</em>所有这一切都决定了我对msg的爱。因此<em>我赋予了它许多可能</em>在外形方面，它坚持简陋的变化，在作用方面，它坚持零用户操作。而且它的参数也是自动补齐的。</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//eg1</li><li>layer.msg('只想弱弱提示');</li><li>//eg2</li><li>layer.msg('有表情地提示', {icon: 6}); </li><li>//eg3</li><li>layer.msg('关闭后想做些什么', function(){</li><li>  //do something</li><li>}); </li><li>//eg</li><li>layer.msg('同上', {</li><li>  icon: 1,</li><li>  time: 2000 //2秒关闭（如果不配置，默认是3秒）</li><li>}, function(){</li><li>  //do something</li><li>});   </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.load">layer.load(icon, options)</a> - 加载层</legend></fieldset></div>
+<dd class="site-text">
+<p>type:3的深度定制。load并不需要你传太多的参数，但如果你不喜欢默认的加载风格，你还有选择空间。icon支持传入<em>0-2</em>如果是0，无需传。另外特别注意一点：<em>load默认是不会自动关闭的</em>，因为你一般会在ajax回调体中关闭它。</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//eg1</li><li>var index = layer.load();</li><li>//eg2</li><li>var index = layer.load(1); //换了种风格</li><li>//eg3</li><li>var index = layer.load(2, {time: 10*1000}); //又换了种风格，并且设定最长等待10秒 </li><li>//关闭</li><li>layer.close(index);     </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.tips">layer.tips(content, follow, options)</a> - tips层</legend></fieldset></div>
+<dd class="site-text">
+<p>type:4的深度定制。也是我本人比较喜欢的一个层类型，因为它拥有和msg一样的低调和自觉，而且会<em>智能定位</em>，即灵活地判断它应该出现在哪边。默认是在元素右边弹出</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//eg1</li><li>layer.tips('只想提示地精准些', '#id');</li><li>//eg 2</li><li>$('#id').on('click', function(){</li><li>  var that = this;</li><li>  layer.tips('只想提示地精准些', that); //在元素的事件回调体中，follow直接赋予this即可</li><li>});</li><li>//eg 3</li><li>layer.tips('在上面', '#id', {</li><li>  tips: 1</li><li>});</li><li>        </li></ol></pre>
+</dd>
+<p style="padding-bottom:10px; color:#999">上面主要是一些弹层的调用方式，而下面介绍的是一些辅助性的方法</p>
+<div class="site-title"><fieldset><legend><a name="layer.close">layer.close(index)</a> - 关闭特定层</legend></fieldset></div>
+<dd class="site-text">
+<p>关于它似乎没有太多介绍的必要，唯一让你疑惑的，可能就是这个<em>index</em>了吧。事实上它非常容易得到。</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//当你想关闭当前页的某个层时</li><li>var index = layer.open();</li><li>var index = layer.alert();</li><li>var index = layer.load();</li><li>var index = layer.tips();</li><li>//正如你看到的，每一种弹层调用方式，都会返回一个index</li><li>layer.close(index); //此时你只需要把获得的index，轻轻地赋予layer.close即可</li><li> </li><li>//如果你想关闭最新弹出的层，直接获取layer.index即可</li><li>layer.close(layer.index); //它获取的始终是最新弹出的某个层，值是由layer内部动态递增计算的</li><li> </li><li>//当你在iframe页面关闭自身时</li><li>var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引</li><li>parent.layer.close(index); //再执行关闭   </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.closeAll">layer.closeAll(type)</a> - 关闭所有层</legend></fieldset></div>
+<dd class="site-text">
+<p>如果你很懒，你<em>不想去获取index</em>你只想关闭。那么closeAll真的可以帮上你。如果你不指向层类型的话，它会销毁掉当前页所有的layer层。当然，如果你只想关闭某个类型的层，那么你可以</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.closeAll(); //疯狂模式，关闭所有层</li><li>layer.closeAll('dialog'); //关闭信息框</li><li>layer.closeAll('page'); //关闭所有页面层</li><li>layer.closeAll('iframe'); //关闭所有的iframe层</li><li>layer.closeAll('loading'); //关闭加载层</li><li>layer.closeAll('tips'); //关闭所有的tips层    </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.style">layer.style(index, cssStyle)</a> - 重新定义层的样式</legend></fieldset></div>
+<dd class="site-text">
+<p>该方法对loading层和tips层无效。参数index为层的索引，cssStyle允许你传入任意的css属性</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//重新给指定层设定width、top等</li><li>layer.style(index, {</li><li>  width: '1000px',</li><li>  top: '10px'</li><li>});       </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.title">layer.title(title, index)</a> - 改变层的标题</legend></fieldset></div>
+<dd class="site-text">
+<p>使用方式：<em>layer.title('标题变了', index)</em></p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.getChildFrame">layer.getChildFrame(selector, index)</a> - 获取iframe页的DOM</legend></fieldset></div>
+<dd class="site-text">
+<p>当你试图在当前页获取iframe页的DOM元素时，你可以用此方法。<em>selector即iframe页的选择器</em></p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.open({</li><li>  type: 2,</li><li>  content: 'test/iframe.html',</li><li>  success: function(layero, index){</li><li>    var body = layer.getChildFrame('body', index);</li><li>    var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();</li><li>    console.log(body.html()) //得到iframe页的body内容</li><li>    body.find('input').val('Hi，我是从父页来的')</li><li>  }</li><li>});       </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.getFrameIndex">layer.getFrameIndex(windowName)</a> - 获取特定iframe层的索引</legend></fieldset></div>
+<dd class="site-text">
+<p>此方法一般用于在iframe页关闭自身时用到。</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//假设这是iframe页</li><li>var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引</li><li>parent.layer.close(index); //再执行关闭        </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.iframeAuto">layer.iframeAuto(index)</a> - 指定iframe层自适应</legend></fieldset></div>
+<dd class="site-text">
+<p>调用该方法时，iframe层的高度会重新进行适应</p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.iframeSrc">layer.iframeSrc(index, url)</a> - //重置特定iframe url</legend></fieldset></div>
+<dd class="site-text">
+<p>似乎不怎么常用的样子。使用方式：<em>layer.iframeSrc(index, 'http://sentsin.com')</em></p>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.setTop">layer.setTop(layero)</a> -置顶当前窗口 </legend></fieldset></div>
+<dd class="site-text">
+<p>非常强大的一个方法，虽然一般很少用。但是当你的页面有很多很多layer窗口，你需要像Window窗体那样，点击某个窗口，该窗体就置顶在上面，那么setTop可以来轻松实现。它采用巧妙的逻辑，以使这种置顶的性能达到最优</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//通过这种方式弹出的层，每当它被选择，就会置顶。</li><li>layer.open({</li><li>  type: 2,</li><li>  shade: false,</li><li>  area: '500px',</li><li>  maxmin: true,</li><li>  content: 'http://www.layui.com',</li><li>  zIndex: layer.zIndex, //重点1</li><li>  success: function(layero){</li><li>    layer.setTop(layero); //重点2</li><li>  }</li><li>});     </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.full">layer.full()、layer.min()、layer.restore()</a> - 手工执行最大小化</legend></fieldset></div>
+<dd class="site-text">
+<p>（这三个酱油又一次被并列 ==。）一般用于在自定义元素上触发最大化、最小化和全屏。</p>
+</dd>
+</dl>
+<blockquote class="layui-elem-quote">请注意，从2.3开始，无需通过layer.config来加载拓展模块。如果您是之前版本，则需通过下述方式来加载</blockquote>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.config({</li><li>  extend: 'extend/layer.ext.js'</li><li>});     </li><li>    </li></ol></pre>
+<dl>
+<div class="site-title"><fieldset><legend><a name="layer.prompt">layer.prompt(options, yes)</a> - 输入层</legend></fieldset></div>
+<dd class="site-text">
+<p>prompt的参数也是向前补齐的。options不仅可支持传入基础参数，还可以传入prompt专用的属性。当然，也可以不传。yes携带<em>value 表单值</em><em>index 索引</em><em>elem 表单元素</em></p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//prompt层新定制的成员如下</li><li>{</li><li>  formType: 1, //输入框类型，支持<em>0（文本）默认</em><em>1（密码）</em><em>2（多行文本）</em></li><li>  value: '', //初始时的值，默认空字符</li><li>  maxlength: 140, //可输入文本的最大长度，默认500</li><li>}</li><li> </li><li>//例子1</li><li>layer.prompt(function(value, index, elem){</li><li>  alert(value); //得到value</li><li>  layer.close(index);</li><li>});</li><li> </li><li>//例子2</li><li>layer.prompt({</li><li>  formType: 2,</li><li>  value: '初始值',</li><li>  title: '请输入值',</li><li>  area: ['800px', '350px'] //自定义文本域宽高</li><li>}, function(value, index, elem){</li><li>  alert(value); //得到value</li><li>  layer.close(index);</li><li>});</li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.tab">layer.tab(options)</a> - tab层</legend></fieldset></div>
+<dd class="site-text">
+<p>tab层只单独定制了一个成员，即<em>tab: []</em>，这个好像没有什么可介绍的，简单粗暴看例子</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.tab({</li><li>  area: ['600px', '300px'],</li><li>  tab: [{</li><li>    title: 'TAB1', </li><li>    content: '内容1'</li><li>  }, {</li><li>    title: 'TAB2', </li><li>    content: '内容2'</li><li>  }, {</li><li>    title: 'TAB3', </li><li>    content: '内容3'</li><li>  }]</li><li>});        </li><li>        </li></ol></pre>
+</dd>
+<div class="site-title"><fieldset><legend><a name="layer.photos">layer.photos(options)</a> - 相册层</legend></fieldset></div>
+<dd class="site-text">
+<p>相册层，也可以称之为图片查看器。它的出场动画从layer内置的动画类型中随机展现。photos支持传入json和直接读取页面图片两种方式。如果是json传入，如下：</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>$.getJSON('/jquery/layer/test/photos.json', function(json){</li><li>  layer.photos({</li><li>    photos: json</li><li>    ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）</li><li>  });</li><li>}); </li><li>//而返回的json需严格按照如下格式：</li><li><pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>{</li><li>  "title": "", //相册标题</li><li>  "id": 123, //相册id</li><li>  "start": 0, //初始显示的图片序号，默认0</li><li>  "data": [   //相册包含的图片，数组格式</li><li>    {</li><li>      "alt": "图片名",</li><li>      "pid": 666, //图片id</li><li>      "src": "", //原图地址</li><li>      "thumb": "" //缩略图地址</li><li>    }</li><li>  ]</li><li>}</li><li></li></ol></pre></li><li>        </li></ol></pre>
+<p>如果是直接从页面中获取图片，那么需要指向图片的父容器，并且你的img可以设定一些规定的属性（但不是必须的）。</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>//HTML示例</li><li>&lt;div id="layer-photos-demo" class="layer-photos-demo"&gt;</li><li>  &lt;img layer-pid="图片id，可以不写" layer-src="大图地址" src="缩略图" alt="图片名"&gt;</li><li>  &lt;img layer-pid="图片id，可以不写" layer-src="大图地址" src="缩略图" alt="图片名"&gt;</li><li>&lt;/div&gt;</li><li> </li><li>&lt;script&gt;</li><li>//调用示例</li><li>layer.photos({</li><li>  photos: '#layer-photos-demo'</li><li>  ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）</li><li>}); </li><li>&lt;/script&gt;</li><li>        </li></ol></pre>
+<p>看看一个实例呗：</p>
+<div id="layer-photos-demo" class="layer-photos-demo">
+<img layer-src="//res.layui.com/images/fly/fly.jpg" layer-pid="" src="./layer弹层组件开发文档 - layui_files/fly.jpg" alt="说好的，一起Fly" layer-index="0">
+<img layer-src="//res.layui.com/images/fly/layim.jpg" layer-pid="" src="./layer弹层组件开发文档 - layui_files/layim.jpg" alt="LayIM" layer-index="1">
+<img layer-src="" layer-pid="" src="./layer弹层组件开发文档 - layui_files/10995825.jpg" alt="凤姐是个好人" layer-index="2">
+<img layer-src="//res.layui.com/images/sentsin/night.gif" layer-pid="" src="./layer弹层组件开发文档 - layui_files/night.gif" alt="星空如此深邃" layer-index="3">
+</div>
+<p>第二种方式的图片查看器显然更加简单，因为无需像第一种那样返回规定的json，但是他们还是有各自的应用场景的，你可以按照你的需求进行选择。另外，photos还有个tab回调，切换图片时触发。</p>
+<pre class="layui-code layui-box layui-code-view"><h3 class="layui-code-h3">code<a href="http://www.layui.com/doc/modules/code.html" target="_blank">layui.code</a></h3><ol class="layui-code-ol"><li>layer.photos({</li><li>  photos: json/选择器,</li><li>  tab: function(pic, layero){</li><li>    console.log(pic) //当前图片的一些信息</li><li>  }</li><li>});</li><li>        </li></ol></pre>
+</dd>
+</dl>
+<fieldset class="layui-elem-field layui-field-title site-title">
+<legend>结语</legend>
+</fieldset>
+<div class="site-text">
+<p>合理地设定基础参数，合理地选择内置方法，合理的心态，合理地阅读，只要一切都在合理的前提下，你才会感知到layer许许多多令人愉悦的地方，<em>她真的是否如你所愿，取决于你对她了解的深远</em>。愿layer能给你的web开发带来一段美妙的旅程。别忘了在线调试。
+</p>
+</div>
+<div class="layui-elem-quote">
+<p>Layui - 用心与你沟通</p>
+</div>
+</div>
+</div>
+<style>.runtest{position:relative;display:none;}.runtest textarea{display:block;width:300px;height:160px;border:10px solid #F8F8F8;border-top-width:0;padding:10px;line-height:20px;overflow:auto;background-color:#3F3F3F;color:#eee;font-size:12px;font-family:Courier New;}.runtest a{position:absolute;right:20px;bottom:20px;}.layer-photos-demo{margin:10px 0;}.layer-photos-demo img{width:160px;height:100px;}</style>
+<div class="runtest" style="display: none;">
+<textarea class="site-demo-text" id="testmain">layer.open({
+  title: '在线调试'
+  ,content: '可以填写任意的layer代码'
+});     
+  </textarea>
+<a href="javascript:;" class="layui-btn layui-btn-normal" onclick="try{new Function(testmain.value)();}catch(e){alert(&#39;语句异常：&#39;+e.message)}">立即运行</a>
+</div>
+<div class="layui-footer footer footer-doc">
+<div class="layui-main">
+<p>© 2017 <a href="http://www.layui.com/">layui.com</a> MIT license</p>
+<p>
+<a href="http://fly.layui.com/case/2017/" target="_blank">案例</a>
+<a href="http://fly.layui.com/jie/3147.html" target="_blank">捐赠</a>
+<a href="mailto:xianxin@layui.com">联系</a>
+<a href="https://github.com/sentsin/layui/" target="_blank">GitHub</a>
+<a href="https://gitee.com/sentsin/layui" target="_blank">码云</a>
+<a href="http://fly.layui.com/jie/2461.html" target="_blank">微信公众号</a>
+</p>
+</div>
+</div>
+<script async="" src="./layer弹层组件开发文档 - layui_files/adsbygoogle.js.下载"></script>
+<div class="site-tree-mobile layui-hide">
+<i class="layui-icon"></i>
+</div>
+<div class="site-mobile-shade"></div>
+<script src="./layer弹层组件开发文档 - layui_files/layui.js.下载" charset="utf-8"></script>
+<script>layui.config({base:'//res.layui.com/lay/modules/layui/'
+,version:'1507147406145'
+}).use('global');window.global ={preview:function(){var preview =document.getElementById('LAY_preview');return preview ?preview.innerHTML :'';}()
+};</script>
+<script type="text/javascript">var cnzz_protocol =(("https:" ==document.location.protocol) ?" https://" :" http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30088308'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30088308' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_30088308"></span><script src="./layer弹层组件开发文档 - layui_files/c.php" type="text/javascript"></script>
+<script>layui.use('layer',function(){var $ =layui.jquery
+,layer =layui.layer;if($(window).width() <=750) return;var debug =$('#L_layerDebug'),popDebug =function(){layer.open({type:1
+,title:'在线调试'
+,id:'Lay_layer_debug'
+,content:$('.runtest')
+,shade:false
+,offset:'rb'
+,resize:false
+,success:function(layero,index){layer.style(index,{marginLeft:-220
+});debug.hide();}
+,end:function(){debug.show();}
+});testmain.focus();};debug.on('click',popDebug);layer.ready(function(){layer.photos({photos:'#layer-photos-demo'
+});popDebug();});});</script>
+
+<div class="layui-layer-move"></div><ul class="layui-fixbar"><li class="layui-icon" lay-type="bar1" style=""></li><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: none;"></li></ul></body></html>
