@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       var obj1 = {name:"obj1"}
+
+       function sayName(){
+           
+           console.log(this.name);
+       }
+
+       // 将this指向由winddows改为 对象 obj1
+       var obj1Fun = sayName.bind(obj1);
+       obj1Fun();// obj1
+
+    </script>
+</body>
+
+</html>
