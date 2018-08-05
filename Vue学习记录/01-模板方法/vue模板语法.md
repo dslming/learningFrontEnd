@@ -117,8 +117,6 @@ data(){
 
 #### 1 v-model
 
-可以简写：`:`
-
 ```html
 <div id="app">
   <input type="text" v-model="value1">
