@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 第一题：实现元素上下左右居中 -->
+    <!-- <style>
+        .wrapper{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+
+        .content{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+
+    <section class="wrapper">
+        <div class="content">
+            123456
+        </div>
+    </section> -->
+
+    <!-- 第二题：两列布局,左固定宽100px，由自适应 -->
+    <!-- <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        body, html, .wrapper{
+            width: 100%;
+            height: 100%;
+        }
+
+        .left{
+            width: 100px;
+            height: 100%;
+            position: fixed;
+            background-color: red;
+        }
+        .right{
+            padding-left:100px;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+        }
+    </style>
+    <section class="wrapper">
+        <div class="left">left content</div>
+        <div class="right">right content</div>
+    </section> -->
+
+    <!-- 第四题 -->
+    <!-- <script>
+        var a = 1;
+        a = 2;
+        window.a = 3;
+        
+        function Test(){
+            let a = 4;
+            this.a = 5;
+
+            setTimeout(function(){
+                console.log(a); // 4
+            },10);
+
+             setTimeout(function(){
+                console.log(this.a); // 3
+            },20);
+
+            setTimeout(function(){
+                console.log(a);   // 4
+            },30);
+
+            setTimeout(function(){
+                console.log(this.a); // 3
+            },40);
+        }
+        
+        new Test();
+
+    </script> -->
+
+    <!-- 第5题 -->
+    <!-- <script>
+        var x = 1,y=2;
+
+        var z = function (){
+            var x = [2];
+            return {
+                x:x, // x是数组的地址
+                y:function(a, b){
+                    x[0] = a + b;
+                },
+                z:function(){
+                    return x[0];
+                }
+            };
+        }
+
+        a = z();  // {x:3,y:function(),z:function()}
+        a.y(x,y);
+        console.log(a.z(), a.x[0], x);// 3, 3, 1
+    </script> -->
+
+    <!-- 第六题,类型判断 -->
+    <!-- <script>
+        function confirmType(obj){
+            return typeof obj;
+        }
+
+        console.log(confirmType(1));
+    </script> -->
+
+    <!-- 第七题,深拷贝 -->
+    <!-- <script>
+        var obj1 = {name:"jack"};
+        var obj2 = JSON.parse(JSON.stringify(obj1));
+        console.log(obj2);
+    </script> -->
+
+    <!-- 第八题,实现继承 -->
+    <script>
+        function Parent(){
+            this.name = "name"
+        }
+
+        Parent.prototype.say = function(){
+            console.log("say something");
+        }
+
+        function Son(){
+            Parent.call(this);
+        }
+
+        Son.prototype = new Parent();
+    </script>
+</body>
+</html>

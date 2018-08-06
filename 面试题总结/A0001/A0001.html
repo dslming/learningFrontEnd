@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+    </style>
+
+    <div>
+        <form action="" id="login">
+            <input type="text" id="loginName" value="Jack">
+        </form>
+    </div>
+
+    <!-- 选择题 -->
+    <script>
+        function question2() {
+            var loginName = login.loginName.value;
+            console.log(loginName);
+        }
+
+        function question7() {
+            var arr = ["1", "2", "10"];// 
+            console.log(arr.map(parseInt));// [1,NaN,2]
+            // 相当于：
+            // console.log(parseInt("1", 0, arr));
+            // console.log(parseInt("2", 1, arr));
+            // console.log(parseInt("10",2, arr));
+        }
+
+        function question8() {
+            var a = [0];
+            if ([0]) {
+                console.log(a == true);// false
+            } else {
+                console.log("wut");
+            }
+
+            // 分析：
+            // console.log([0] == 0); // true
+            // console.log([0] === 0); // false
+            // 1)由上面得出,[0]类型转换后的值是 0
+
+            // console.log(typeof [0]); // object
+            // console.log([0] instanceof Array); // true
+            // 2)由上面得出, [0]是一个数组
+
+            // console.log([0] == false);// true
+            // 3) [0] 的隐士转换就是 false
+
+            // if([0]) console.log("xixi"); // xixi
+            // 4) [0] 作为if判断条件时,不做类型转换，他是数组的地址，所以为true。
+        }
+
+        function question9() {
+            var arr = Array(3);
+            arr[0] = 2;
+            console.log(arr.map(function (item) { return "1" }));// ["1", empty*2]
+
+            // 分析：
+            // map 的遍历次数是数组中有效元素的数量
+        }
+
+        function question10() {
+            var arr = [1, 2, 3];
+            console.log(arr.pop()); // 3
+        }
+    </script>
+
+    <!-- 程序题1 -->
+    <script>
+        function a(item){
+            this.x = item;
+            return this;
+        }
+
+        var x = a(5);
+        var y = a(6);
+
+        // console.log(x.x); // undefined
+        // console.log(y.x); // 6
+
+        // 分析：
+        // 1)第一步：
+        // var x = a(5); 等价于  var x = window.a(5);
+        // console.log(window.x.x === x.x);// true
+
+        // 2)第二步：
+        // 在函数a中：this.x = item 等价于 window.x = item
+        // 所以 window.x.x undefined
+
+        // 3)第三步：
+        // 在函数 a 中, window.x = 6;
+        // console.log(x);// 6
+        // y = window
+        // 所以window.x = 6
+    </script>
+
+    <!-- 编程题3 -->
+    <script>
+        var w1Date;
+        var w2Date;
+        var startTime = 0;
+        
+        function w1(){
+            w1Date = Date.now();
+            // console.log("w1:"+(w1Date - startTime));
+        }
+
+        function w2(){
+            w2Date = Date.now();
+            // console.log("w2:"+(w2Date - startTime));
+        }
+
+        startTime = Date.now();
+        setTimeout(w1, 500);
+        setTimeout(w2, 1000);
+
+        function timeLoop(k){
+            var now = Date.now();
+            while(Date.now() - now < k){};
+            // console.log("time out");
+        }
+
+        // timeLoop(5000);
+    </script>
+
+    <!-- 简答题 -->
+    <script>
+        console.log(window.document);
+    </script>
+</body>
+
+</html>
