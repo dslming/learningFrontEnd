@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="./jquery.js"></script>
+
+<script>
+   var str = 'abc.com?a=1&bb=22&ccc=333';
+   var arr =  /(\w+=\d*)&(\w+=\d*)&(\w+=\d*)/.exec(str);
+   var obj = {};
+    for(var i = 1; i<arr.length; i++){
+        var temp = arr[i].split("=");
+        obj[temp[0]] = parseInt(temp[1]);\ 
+    }
+    console.log(obj) 
+
+</script>
+</html>
