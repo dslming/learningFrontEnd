@@ -33,6 +33,7 @@ $.ajax({
 - timeout：请求超时时间
 - success：请求成功之后触发
 - error：请求失败触发
+- async:false,
 
 ## 1.2 参数说明补充
 

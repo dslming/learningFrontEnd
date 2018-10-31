@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./jquery-1.12.4.js"></script>
+
+    <script>
+        //传入一个对象
+        $.ajax({
+
+            //请求网址
+            url: 'https://news-at.zhihu.com/api/4/news/latest',
+            //请求类型
+            type: 'get',
+            //服务器响应数据类型，如果是跨域，可以改成jsonp
+            dataType: 'json',
+            //发送给服务器的数据（请求体）,如果是get请求数据写在url,如果是post才写data属性
+            data: { id: 1 },
+            //回调函数：响应回来调用的函数
+            success: function (data) {
+                console.log(data)
+            },
+            //请求失败触发
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    </script>
+</body>
+
+</html>

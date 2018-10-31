@@ -1,9 +1,8 @@
 {
   "herosArr": [
     {
-      "icon": "/imgs\\upload_76252785f110b88c6c308eb7ec3611c6.JPG",
-      "id": 1,
-      "name": "jack",
+      "id": "1",
+      "name": "jack2",
       "gender": "男"
     },
     {
