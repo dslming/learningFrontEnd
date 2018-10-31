@@ -1,0 +1,159 @@
+.ivu-switch {
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+  line-height: 20px;
+  border-radius: 22px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+.ivu-switch-loading {
+  opacity: .4;
+}
+.ivu-switch-inner {
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  left: 23px;
+}
+.ivu-switch-inner i {
+  width: 12px;
+  height: 12px;
+  text-align: center;
+  position: relative;
+  top: -1px;
+}
+.ivu-switch:after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  background-color: #fff;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  cursor: pointer;
+  transition: left 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+.ivu-switch:active:after {
+  width: 26px;
+}
+.ivu-switch:before {
+  content: '';
+  display: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: 1;
+  border: 1px solid #2d8cf0;
+  border-color: transparent transparent transparent #2d8cf0;
+  animation: switch-loading 1s linear;
+  animation-iteration-count: infinite;
+}
+.ivu-switch-loading:before {
+  display: block;
+}
+.ivu-switch:focus {
+  box-shadow: 0 0 0 2px rgba(45, 140, 240, 0.2);
+  outline: 0;
+}
+.ivu-switch:focus:hover {
+  box-shadow: none;
+}
+.ivu-switch-small {
+  width: 28px;
+  height: 16px;
+  line-height: 14px;
+}
+.ivu-switch-small:after {
+  width: 12px;
+  height: 12px;
+}
+.ivu-switch-small:active:after {
+  width: 14px;
+}
+.ivu-switch-small:before {
+  width: 10px;
+  height: 10px;
+  left: 2px;
+  top: 2px;
+}
+.ivu-switch-small.ivu-switch-checked:after {
+  left: 13px;
+}
+.ivu-switch-small.ivu-switch-checked:before {
+  left: 14px;
+}
+.ivu-switch-small:active.ivu-switch-checked:after {
+  left: 11px;
+}
+.ivu-switch-large {
+  width: 56px;
+}
+.ivu-switch-large:active:after {
+  width: 26px;
+}
+.ivu-switch-large:active:after {
+  width: 30px;
+}
+.ivu-switch-large.ivu-switch-checked:after {
+  left: 35px;
+}
+.ivu-switch-large.ivu-switch-checked:before {
+  left: 37px;
+}
+.ivu-switch-large:active.ivu-switch-checked:after {
+  left: 23px;
+}
+.ivu-switch-checked {
+  border-color: #2d8cf0;
+  background-color: #2d8cf0;
+}
+.ivu-switch-checked .ivu-switch-inner {
+  left: 7px;
+}
+.ivu-switch-checked:after {
+  left: 23px;
+}
+.ivu-switch-checked:before {
+  left: 25px;
+}
+.ivu-switch-checked:active:after {
+  left: 15px;
+}
+.ivu-switch-disabled {
+  cursor: not-allowed;
+  background: #f3f3f3;
+  border-color: #f3f3f3;
+}
+.ivu-switch-disabled:after {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.ivu-switch-disabled .ivu-switch-inner {
+  color: #ccc;
+}
+@keyframes switch-loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.switch {
+  width: 44px;
+  height: 22px;
+  background-color: pink;
+  border-radius: 22px;
+  cursor: pointer;
+}

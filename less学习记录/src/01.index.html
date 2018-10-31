@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./01.css">
+</head>
+<body>
+   <span class="ivu-switch ivu-switch-checked">
+       <input type="hidden">
+   </span>
+
+   <div class="switch"></div>
+
+   <script>
+       var btn = document.querySelector(".ivu-switch-checked");
+       var flag = 1;
+       btn.onclick = function(){
+           
+           this.className = flag==1?"ivu-switch":"ivu-switch ivu-switch-checked";
+           flag = !flag;
+       }
+   </script>
+</body>
+</html>
